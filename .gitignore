@@ -9,6 +9,7 @@
 
 # Book specific
 playground
+_build/
 
 # Opam switch
 _opam/

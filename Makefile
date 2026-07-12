@@ -16,6 +16,9 @@ clean:
 html:
 	OPAMSWITCH=textbook jupyter-book build ${BOOK}
 
+html-ci:
+	scripts/build_book_for_ci.sh
+
 html-strict:
 	jupyter-book build -W ${BOOK}
 
