@@ -132,3 +132,9 @@
 | Post-processing          | 后处理       |
 | Overhead                 | 开销         |
 | Identity Function        | 恒等函数     |
+| Data Type                | 数据类型     |
+| Variant                  | 变体         |
+| Option                   | 选项         |
+| Unit Testing             | 单元测试     |
+| Map                      | 映射         |
+| Algebraic Data Type      | 代数数据类型 |
