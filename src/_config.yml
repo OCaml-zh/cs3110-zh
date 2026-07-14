@@ -11,12 +11,17 @@ sphinx:
   config:
     # Specifying the language can improve accessibility in screen readers
     # and translators
-    language: en
+    language: zh_CN
     # All files from these paths will be included in the generated
     # HTML output, even if they are not linked from any page
     html_extra_path: ['assets']
     # Favicon
     html_favicon: op.png
+    # 确保 Sphinx 会读取 _static 目录下的静态文件
+    html_static_path: ["_static"]
+    # 引入 JS 并添加 defer 属性
+    html_js_files:
+      - ["custom.js", {"defer": "defer"}]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
