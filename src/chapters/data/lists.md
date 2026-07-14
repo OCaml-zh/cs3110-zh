@@ -822,35 +822,60 @@ list expressions.
 
 {{ video_embed | replace("%%VID%%", "aLQJpk9vXD4")}}
 
+<!--
 In addition to that type-checking rule, there are two other checks the compiler
 does for each match expression.
+-->
 
+除了那条类型检查规则之外，编译器还会对每个匹配表达式进行另外两项检查。
+
+<!--
 First, **exhaustiveness:** the compiler checks to make sure that there are
 enough patterns to guarantee that at least one of them matches the expression
 `e`, no matter what the value of that expression is at run time. This ensures
 that the programmer did not forget any branches. For example, the function below
 will cause the compiler to emit a warning:
+-->
+
+首先是**【穷尽性|Exhaustiveness】**：编译器会检查是否有足够的模式，
+以保证无论表达式 `e` 在运行时的值是什么，至少有一个模式能与之匹配。
+这确保了程序员不会遗漏任何分支。例如，下面的函数会导致编译器发出警告：
 
 ```{code-cell} ocaml
 let head lst = match lst with h :: _ -> h
 ```
 
+<!--
 By presenting that warning to the programmer, the compiler is helping the
 programmer to defend against the possibility of `Match_failure` exceptions at
 runtime.
+-->
+
+通过向程序员展示该警告，编译器帮助程序员防范在运行时引发 `Match_failure` 异常的可能性。
 
 ```{note}
+<!--
 Sorry about how the output from the cell above gets split into many lines in the
 HTML. That is currently an [open issue with JupyterBook][issue], the framework
 used to build this book.
+-->
+
+抱歉，上面单元格的输出在 HTML 中被拆成了很多行。
+这目前是 [JupyterBook 的一个未解决问题][issue]，JupyterBook 是用于构建本书的框架。
 
 [issue]: https://github.com/executablebooks/jupyter-book/issues/973
 ```
 
+<!--
 Second, **unused branches:** the compiler checks to see whether any of the
 branches could never be matched against because one of the previous branches is
 guaranteed to succeed. For example, the function below will cause the compiler
 to emit a warning:
+-->
+
+其次，**【未使用的分支|Unused Branches】：** 编译器会检查是否有分支
+永远不会被匹配到，因为前面的某个分支保证会成功。例如，下面的函数
+会导致编译器发出警告：
 
 ```{code-cell} ocaml
 let rec sum lst =
@@ -860,16 +885,31 @@ let rec sum lst =
   | [] -> 0
 ```
 
+<!--
 The second branch is unused because the first branch will match anything the
 second branch matches.
+-->
 
+第二个分支未被使用，因为第一个分支能匹配第二个分支所能匹配的任何内容。
+
+<!--
 Unused match cases are usually a sign that the programmer wrote something other
 than what they intended. So by presenting that warning, the compiler is helping
 the programmer to detect latent bugs in their code.
+-->
 
+未使用的【匹配|Match】分支通常是程序员写出与其意图不符的代码的信号。
+因此，通过显示该警告，编译器正在帮助程序员检测代码中的潜在错误。
+
+<!--
 Here's an example of one of the most common bugs that causes an unused match
 case warning. Understanding it is also a good way to check your understanding of
 the dynamic semantics of match expressions:
+-->
+
+下面是一个最常见的导致「未使用匹配分支」警告的错误示例。
+理解它也是检验你对【匹配表达式|Match Expression】的【动态语义|Dynamic Semantics】
+掌握程度的好方法：
 
 ```{code-cell} ocaml
 let length_is lst n =
@@ -878,6 +918,7 @@ let length_is lst n =
   | _ -> false
 ```
 
+<!--
 The programmer was thinking that if the length of `lst` is equal to `n`, then
 this function will return `true`, and otherwise will return `false`. But in fact
 this function *always* returns `true`. Why? Because the pattern variable `n` is
@@ -888,8 +929,23 @@ and here produces the binding `n->5`. Then evaluation applies that binding to
 `true`, substituting all occurrences of `n` inside of `true` with 5. Well, there
 are no such occurrences. So we're done, and the result of evaluation is just
 `true`.
+-->
 
+程序员的想法是，如果 `lst` 的长度等于 `n`，那么这个函数将返回 `true`，
+否则返回 `false`。但实际上这个函数**总是**返回 `true`。为什么呢？
+因为【模式变量|Pattern Variable】`n` 与函数参数 `n` 是不同的。
+假设 `lst` 的长度为 5。那么模式匹配就变成了：
+`match 5 with n -> true | _ -> false`。`n` 能匹配 5 吗？
+能，根据上面的规则：【变量模式|Variable Pattern】能匹配任何值，
+并在这里产生【绑定|Binding】`n->5`。然后求值将该绑定应用到 `true`，
+将 `true` 内部所有出现的 `n` 替换为 5。然而，
+并没有这样的出现。所以求值完成，结果就是 `true`。
+
+<!--
 What the programmer really meant to write was:
+-->
+
+程序员真正想写的是：
 
 ```{code-cell} ocaml
 let length_is lst n =
@@ -897,33 +953,55 @@ let length_is lst n =
   | m -> m = n
 ```
 
+<!--
 or better yet:
+-->
+
+或更好的是：
 
 ```{code-cell} ocaml
 let length_is lst n =
   List.length lst = n
 ```
 
+<!--
 ## Deep Pattern Matching
+-->
 
+## 深度模式匹配
+
+<!--
 Patterns can be nested.  Doing so can allow your code to look deeply into the
 structure of a list.  For example:
+-->
 
-* `_ :: []` matches all lists with exactly one element
+【模式|Pattern】可以【嵌套|Nested】。这样做可以让你的代码深入观察列表的结构。例如：
 
-* `_ :: _` matches all lists with at least one element
+* `_ :: []` 匹配所有恰好有一个元素的列表
 
-* `_ :: _ :: []` matches all lists with exactly two elements
+* `_ :: _` 匹配所有至少有一个元素的列表
 
-* `_ :: _ :: _ :: _` matches all lists with at least three elements
+* `_ :: _ :: []` 匹配所有恰好有两个元素的列表
 
+* `_ :: _ :: _ :: _` 匹配所有至少有三个元素的列表
+
+<!--
 ## Immediate Matches
+-->
+
+## 立即匹配
 
 {{ video_embed | replace("%%VID%%", "VgVP8Tin6yY")}}
 
+<!--
 When you have a function that immediately pattern-matches against its final
 argument, there's a nice piece of syntactic sugar you can use to avoid writing
 extra code. Here's an example: instead of
+-->
+
+当你的函数对最后一个参数立即进行【模式匹配|Pattern Matching】时，
+有一种巧妙的【语法糖|Syntactic Sugar】可以让你避免编写额外的代码。
+下面是一个例子：与其写成
 
 ```{code-cell} ocaml
 let rec sum lst =
@@ -932,7 +1010,11 @@ let rec sum lst =
   | h :: t -> h + sum t
 ```
 
+<!--
 you can write
+-->
+
+你也可以写成
 
 ```{code-cell} ocaml
 let rec sum = function
@@ -940,62 +1022,127 @@ let rec sum = function
   | h :: t -> h + sum t
 ```
 
+<!--
 The word `function` is a keyword. Notice that we're able to leave out the line
 containing `match` as well as the name of the argument, which was never used
 anywhere else but that line. In such cases, though, it's especially important in
 the specification comment for the function to document what that argument is
 supposed to be, since the code no longer gives it a descriptive name.
+-->
 
+`function` 是一个【关键字|Keyword】。注意，我们可以省略包含 `match` 的那一行，
+以及参数的名称——该参数除了那一行之外从未在其他地方使用。
+然而，在这种情况下，在函数的规范注释中记录该参数的含义就尤为重要，
+因为代码不再为其提供描述性的名称。
+
+<!--
 ## OCamldoc and List Syntax
+-->
 
+## OCamldoc 与列表语法
+
+<!--
 OCamldoc is a documentation generator similar to Javadoc. It extracts comments
 from source code and produces HTML (as well as other output formats). The
 [standard library web documentation][std-web] for the List module is generated
 by OCamldoc from the [standard library source code][std-src] for that module,
 for example.
+-->
+
+OCamldoc 是一个类似于 Javadoc 的【文档生成器|Documentation Generator】。
+它从源代码中提取注释并生成 HTML（以及其他输出格式）。
+例如，List 模块的[标准库在线文档][std-web]就是由 OCamldoc
+从该模块的[标准库源代码][std-src]生成的。
 
 ```{warning}
+<!--
 There is a syntactic convention with square brackets in OCamldoc that can be
 confusing with respect to lists.
+-->
 
+OCamldoc 中关于方括号的语法约定可能会与列表产生混淆。
+
+<!--
 In an OCamldoc comment, source code is surrounded by square brackets. That code
 will be rendered in typewriter face and syntax-highlighted in the output HTML.
 The square brackets in this case do not indicate a list.
+-->
+
+在 OCamldoc 注释中，源代码由方括号包围。该代码将以等宽字体呈现，
+并在输出的 HTML 中进行语法高亮。此处的方括号并不表示列表。
 ```
 
+<!--
 For example, here is the comment for `List.hd` in the standard library source
 code:
+-->
+
+例如，以下是标准库源代码中 `List.hd` 的注释：
 
 ```ocaml
 (** Return the first element of the given list. Raise
    [Failure "hd"] if the list is empty. *)
 ```
 
+<!--
 The `[Failure "hd"]` does not mean a list containing the exception
 `Failure "hd"`. Rather it means to typeset the expression `Failure "hd"` as
 source code, as you can see [here][std-web].
+-->
 
+`[Failure "hd"]` 并非表示包含异常 `Failure "hd"` 的列表，
+而是表示将表达式 `Failure "hd"` 以源代码的形式排版，
+如[此处][std-web]所示。
+
+<!--
 This can get especially confusing when you want to talk about lists as part of
 the documentation. For example, here is a way we could rewrite that comment:
+-->
 
+当你想在文档中讨论列表时，这尤其容易引起混淆。
+例如，以下是我们可以重写该注释的一种方式：
+
+<!--
 ```ocaml
 (** [hd lst] returns the first element of [lst].
     Raises [Failure "hd"] if [lst = []]. *)
 ```
+-->
 
+```ocaml
+(** [hd lst] 返回 [lst] 的第一个元素。
+    当 [lst = []] 时引发 [Failure "hd"] 异常。 *)
+```
+
+<!--
 In `[lst = []]`, the outer square brackets indicate source code as part of a
 comment, whereas the inner square brackets indicate the empty list.
+-->
+
+在 `[lst = []]` 中，外层方括号表示注释中的源代码，
+而内层方括号表示空列表。
 
 [std-web]: https://ocaml.org/api/List.html
 [std-src]: https://github.com/ocaml/ocaml/blob/trunk/stdlib/list.mli
 
+<!--
 ## List Comprehensions
+-->
 
+## 列表推导式
+
+<!--
 Some languages, including Python and Haskell, have a syntax called
 *comprehension* that allows lists to be written somewhat like set comprehensions
 from mathematics. The earliest example of comprehensions seems to be the
 functional language NPL, which was designed in 1977.
+-->
 
+一些语言，包括 Python 和 Haskell，拥有一种称为【推导式|Comprehension】的语法，
+允许以类似于数学中集合推导式的方式来编写列表。
+推导式最早的实例似乎是 1977 年设计的函数式语言 NPL。
+
+<!--
 OCaml doesn't have built-in syntactic support for comprehensions. Though some
 extensions were developed, none seem to be supported any longer. The primary
 tasks accomplished by comprehensions (filtering out some elements, and
@@ -1003,13 +1150,30 @@ transforming others) are actually well-supported already by *higher-order
 programming*, which we'll study in a later chapter, and the pipeline operator,
 which we've already learned. So an additional syntax for comprehensions was
 never really needed.
+-->
 
+OCaml 没有内置的推导式语法支持。尽管曾经开发过一些扩展，
+但似乎都已经不再被支持了。推导式完成的主要任务
+（过滤某些元素以及转换其他元素）实际上已经由【高阶编程|Higher-Order Programming】
+（我们将在后续章节中学习）和【管道运算符|Pipeline Operator】（我们已经学过）很好地支持了。
+因此，推导式的额外语法从未真正被需要过。
+
+<!--
 ## Tail Recursion
+-->
 
+## 尾递归
+
+<!--
 Recall that a function is *tail recursive* if it calls itself recursively but
 does not perform any computation after the recursive call returns, and
 immediately returns to its caller the value of its recursive call. Consider
 these two implementations, `sum` and `sum_tr` of summing a list:
+-->
+
+回顾一下，如果一个函数递归地调用自身，但在【递归调用|Recursive Call】返回后不执行任何计算，
+并且立即将递归调用的值返回给调用者，则该函数是【尾递归|Tail Recursive】的。
+请看以下列表求和的两个实现 `sum` 和 `sum_tr`：
 
 ```{code-cell} ocaml
 let rec sum (l : int list) : int =
@@ -1026,19 +1190,34 @@ let sum_tr : int list -> int =
   sum_plus_acc 0
 ```
 
+<!--
 Observe the following difference between the `sum` and `sum_tr` functions above:
 In the `sum` function, which is not tail recursive, after the recursive call
 returned its value, we add `x` to it. In the tail recursive `sum_tr`, or rather
 in `sum_plus_acc`, after the recursive call returns, we immediately return the
 value without further computation.
+-->
 
+请观察上述 `sum` 和 `sum_tr` 函数之间的区别：在非尾递归的 `sum` 函数中，
+【递归调用|Recursive Call】返回值后，我们会将 `x` 加到该值上。
+而在尾递归的 `sum_tr` 中——或者更准确地说在 `sum_plus_acc` 中——
+递归调用返回后，我们立即返回该值，不再进行额外计算。
+
+<!--
 If you're going to write functions on really long lists, tail recursion becomes
 important for performance. So when you have a choice between using a
 tail-recursive vs. non-tail-recursive function, you are likely better off using
 the tail-recursive function on really long lists to achieve space efficiency.
 For that reason, the List module documents which functions are tail recursive
 and which are not.
+-->
 
+如果你要对非常长的列表编写函数，【尾递归|Tail Recursive】对性能就变得很重要。
+因此，当你可以在尾递归和非尾递归函数之间做选择时，
+对于非常长的列表，使用尾递归函数可能更优，以实现空间效率。
+正因如此，List 模块会记录哪些函数是尾递归的，哪些不是。
+
+<!--
 But that doesn't mean that a tail-recursive implementation is strictly better.
 For example, the tail-recursive function might be harder to read. (Consider
 `sum_plus_acc`.) Also, there are cases where implementing a tail-recursive
@@ -1048,10 +1227,21 @@ in time and in allocating memory for the reversed list) can make the
 tail-recursive version less time efficient. What constitutes "small" vs. "big"
 here? That's hard to say, but maybe 10,000 is a good estimate, according to the
 [standard library documentation of the `List` module][list].
+-->
+
+但这并不意味着尾递归的实现总是更好。例如，尾递归函数可能更难阅读
+（比如 `sum_plus_acc`）。此外，有时实现尾递归函数需要进行预处理或后处理来反转列表。
+对于中小型列表，反转列表的开销（包括时间和分配反转列表所需的内存）
+可能会使尾递归版本的时间效率更低。这里「小」和「大」的界限是什么？
+这很难说，但根据 [`List` 模块的标准库文档][list]，10,000 可能是一个合理的估计。
 
 [list]: https://ocaml.org/api/List.html
 
+<!--
 Here is a useful tail-recursive function to produce a long list:
+-->
+
+下面是一个有用的尾递归函数，它用来产生一个长列表：
 
 ```{code-cell} ocaml
 (** [from i j l] is the list containing the integers from [i] to [j],
@@ -1065,18 +1255,34 @@ let ( -- ) i j = from i j []
 let long_list = 0 -- 1_000_000
 ```
 
+<!--
 It would be worthwhile to study the definition of `--` to convince yourself that
 you understand (i) how it works and (ii) why it is tail recursive.
+-->
 
+值得研究一下 `--` 的定义，以确信你理解 (i) 它是如何工作的，
+以及 (ii) 为什么它是【尾递归|Tail Recursive】的。
+
+<!--
 You might in the future decide you want to create such a list again. Rather than
 having to remember where this definition is, and having to copy it into your
 code, here's an easy way to create the same list using a built-in library
 function:
+-->
+
+你将来可能还想再次创建这样的列表。与其记住这个定义在哪里并将其复制到代码中，
+不如使用【库函数|Library Function】中内置的简便方法来创建相同的列表：
 
 ```{code-cell} ocaml
 List.init 1_000_000 Fun.id
 ```
 
+<!--
 Expression `List.init len f` creates the list `[f 0; f 1; ...; f (len - 1)]`,
 and it does so tail recursively if `len` is bigger than 10,000. Function
 `Fun.id` is simply the identify function `fun x -> x`.
+-->
+
+表达式 `List.init len f` 可创建列表 `[f 0; f 1; ...; f (len - 1)]`，
+如果 `len` 大于 10,000，它会以尾递归方式完成。
+函数 `Fun.id` 就是【恒等函数|Identity Function】`fun x -> x`。
