@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 'OCaml Programming: Correct + Efficient + Beautiful'
+title: 'OCaml 编程：正确 + 高效 + 优雅'
 author: Michael R. Clarkson et al.
 copyright: "2026"
 logo: op_title.png

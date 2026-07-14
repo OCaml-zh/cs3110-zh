@@ -13,3 +13,8 @@ _build/
 
 # Opam switch
 _opam/
+
+# Translate
+package.json
+pnpm-lock.yaml
+.mimocode/
