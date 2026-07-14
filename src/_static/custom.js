@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  const docs = document.querySelectorAll("section > p");
+  const docs = document.querySelectorAll("p");
   const term = /【([^】]+?)\|(.+?)】/gu;
   // const bold = /【(.+?)】/gu;
 

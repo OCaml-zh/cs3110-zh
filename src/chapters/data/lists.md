@@ -235,8 +235,8 @@ The video linked above also uses records and tuples as examples. Those are
 covered in a [later section](records_tuples) of this book.
 -->
 
-上面链接的视频还使用了【记录|Record】和【元组|Tuple】作为例子。本书的
-[后续小节](records_tuples)会介绍它们。
+上面链接的视频还使用了【记录|Record】和【元组|Tuple】作为例子。
+本书的[后续小节](records_tuples)会介绍它们。
 ```
 
 {{ video_embed | replace("%%VID%%", "sO9wxUxajS4")}}
@@ -841,7 +841,7 @@ that the programmer did not forget any branches. For example, the function below
 will cause the compiler to emit a warning:
 -->
 
-首先是**【穷尽性|Exhaustiveness】**：编译器会检查是否有足够的模式，
+首先是【穷尽性|Exhaustiveness】：编译器会检查是否有足够的模式，
 以保证无论表达式 `e` 在运行时的值是什么，至少有一个模式能与之匹配。
 这确保了程序员不会遗漏任何分支。例如，下面的函数会导致编译器发出警告：
 
@@ -877,7 +877,7 @@ guaranteed to succeed. For example, the function below will cause the compiler
 to emit a warning:
 -->
 
-其次，**【未使用的分支|Unused Branches】：** 编译器会检查是否有分支
+其次，【未使用的分支|Unused Branches】：编译器会检查是否有分支
 永远不会被匹配到，因为前面的某个分支保证会成功。例如，下面的函数
 会导致编译器发出警告：
 
