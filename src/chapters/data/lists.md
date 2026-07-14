@@ -468,7 +468,7 @@ prevent exceptions from being raised, thus making your program more robust.
 ## (Not) Mutating Lists
 -->
 
-## （不）可变列表
+## （不）修改列表
 
 <!--
 Lists are immutable. There's no way to change an element of a list from one
