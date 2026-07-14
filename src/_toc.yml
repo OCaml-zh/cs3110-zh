@@ -1,12 +1,12 @@
 format: jb-book
 root: cover.md
 parts:
-  - caption: Preface
+  - caption: 前言
     chapters:
     - file: chapters/preface/about.md
     - file: chapters/preface/install.md
 
-  - caption: Introduction
+  - caption: 引言
     numbered: True
     chapters:
 
@@ -30,7 +30,7 @@ parts:
       - file: chapters/basics/summary.md
       - file: chapters/basics/exercises.md
 
-  - caption: OCaml Programming
+  - caption: OCaml 编程
     numbered: True
     chapters:
 
@@ -98,7 +98,7 @@ parts:
       - file: chapters/conc/summary.md
       - file: chapters/conc/exercises.md
 
-  - caption: Correctness and Efficiency
+  - caption: 正确性与效率
     numbered: True
     chapters:
 
@@ -128,7 +128,7 @@ parts:
       - file: chapters/ds/summary.md
       - file: chapters/ds/exercises.md
 
-  - caption: Language Implementation
+  - caption: 语言实现
     numbered: True
     chapters:
 
@@ -143,11 +143,11 @@ parts:
       - file: chapters/interp/summary.md
       - file: chapters/interp/exercises.md
 
-  - caption: Lagniappe
+  - caption: 赠品
     chapters:
     - file: chapters/adv/curry-howard.md
 
-  - caption: Appendix
+  - caption: 附录
     chapters:
     - file: chapters/appendix/bigoh.md
     - file: chapters/appendix/vm.md
