@@ -32,7 +32,7 @@ Because of that familiarity, we call these *standard* data types. We'll learn
 about *pattern matching*, which is a feature that's less likely to be familiar.
 -->
 
-由于这种熟悉感，我们称这些为**标准**数据类型。
+由于这种熟悉感，我们称这些为【标准|Standard】数据类型。
 我们将学习【模式匹配|Pattern Matching】，这是一个可能不太熟悉的功能。
 
 <!--

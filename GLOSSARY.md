@@ -138,3 +138,7 @@
 | Unit Testing             | 单元测试     |
 | Map                      | 映射         |
 | Algebraic Data Type      | 代数数据类型 |
+| Constructor              | 构造子       |
+| Scope                    | 作用域       |
+| Static Semantics         | 静态语义     |
+| Standard                 | 标准         |
