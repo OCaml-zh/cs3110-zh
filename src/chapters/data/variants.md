@@ -69,8 +69,8 @@ There isn't any kind of automatic way of mapping a constructor name to an `int`,
 like you might expect from languages with enums.
 -->
 
-没有任何自动的方式将构造子名称映射到 `int`，
-而不像你在支持枚举的语言中可能期望的那样。
+不同于你在支持枚举的语言中期望的那样，OCaml
+中没有任何自动的方式能够将构造子名称映射到 `int`，
 
 <!--
 **Syntax.**
@@ -93,13 +93,13 @@ The constructor names must begin with an uppercase letter.  OCaml
 uses that to distinguish constructors from variable identifiers.
 -->
 
-构造子名称必须以大写字母开头。OCaml 用此来区分构造子和变量标识符。
+构造子名称必须以大写字母开头。OCaml 以此来区分构造子和变量标识符。
 
 <!--
 The syntax for writing a constructor value is simply its name, e.g., `C`.
 -->
 
-构造子值的写法语法就是其名称本身，例如 `C`。
+写出构造子值的语法就是其名称本身，例如 `C`。
 
 <!--
 **Dynamic semantics.**
@@ -151,8 +151,8 @@ represent Pok&eacute;mon:
 -->
 
 当 `D` 出现在这些定义之后时，它指的是哪个类型？
-也就是说，上面 `x` 的类型是什么？答案是后定义的类型获胜。
-因此 `x : t2`。这对程序员来说可能出乎意料，
+也就是说，上面 `x` 的类型是什么？答案是后定义的类型获胜，
+因此这里是 `x : t2`。这对程序员来说可能出乎意料，
 因此在任何给定的【作用域|Scope】（例如文件或模块，虽然我们还未涉及模块）中，
 惯用做法是在可能出现重叠构造子名称时，为它们添加一些区分字符作为前缀。
 例如，假设我们正在定义表示宝可梦的类型：
@@ -163,7 +163,6 @@ type ptype =
 
 type peff =
   ENormal | ENotVery | ESuper
-
 ```
 
 <!--
@@ -202,7 +201,7 @@ And we extend the definition of when a pattern matches a value and produces a
 binding as follows:
 -->
 
-并且我们扩展模式何时匹配值并产生【绑定|Binding】的定义如下：
+然后我们将模式何时匹配值并产生【绑定|Binding】的定义扩展如下：
 
 <!--
 * The pattern `C` matches the value `C` and produces no bindings.

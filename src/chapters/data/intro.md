@@ -43,7 +43,7 @@ on lists, which is why we couldn't cover it before now.
 -->
 
 在学习列表之后，我们将暂停对标准数据类型的学习，
-转而学习使用 OUnit 进行 OCaml【单元测试|Unit Testing】。
+转而学习使用 OUnit 进行 OCaml 【单元测试|Unit Testing】。
 OUnit 是一个类似于你在其他语言中可能使用过的单元测试框架。
 OUnit 依赖于列表，这就是为什么我们之前无法涵盖它的原因。
 
