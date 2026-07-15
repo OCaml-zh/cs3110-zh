@@ -41,8 +41,9 @@
 | Unknown Type             | 未知类型     |
 | Compiler                 | 编译器       |
 | Infer                    | 推断         |
-| Record                   | 记录         |
+| Record                   | 记录体       |
 | Tuple                    | 元组         |
+| Pair                     | 偶对         |
 | Component                | 组件         |
 | Empty                    | 空           |
 | Non-Empty                | 非空         |
@@ -138,3 +139,39 @@
 | Unit Testing             | 单元测试     |
 | Map                      | 映射         |
 | Algebraic Data Type      | 代数数据类型 |
+| Constructor              | 构造子       |
+| Scope                    | 作用域       |
+| Static Semantics         | 静态语义     |
+| Standard                 | 标准         |
+| Test Suite               | 测试套件     |
+| Test Case                | 测试用例     |
+| Test-Driven Development  | 测试驱动开发 |
+| Refactor                 | 重构         |
+| Assert                   | 断言         |
+| Anonymous Function       | 匿名函数     |
+| Type Synonym             | 类型同义词   |
+| Key                      | 键           |
+| Association List         | 关联列表     |
+| Tag                      | 标签         |
+| Tagged Union             | 标签联合体   |
+| Sum Type                 | 和类型       |
+| Product Type             | 积类型       |
+| Parametric Polymorphism  | 参数多态     |
+| Polymorphic Variant      | 多态变体     |
+| Extensible Variant       | 可扩展变体   |
+| Exception Packet         | 异常包       |
+| Exception Pattern        | 异常模式     |
+| Tree                     | 树           |
+| Binary Tree              | 二叉树       |
+| Node                     | 节点         |
+| Leaf                     | 叶子         |
+| Subtree                  | 子树         |
+| Preorder                 | 前序         |
+| Traversal                | 遍历         |
+| Mutually Recursive       | 互递归       |
+| Field                    | 字段         |
+| Namespace                | 命名空间     |
+| Component                | 分量         |
+| Triple                   | 三元组       |
+| Disjoint Union           | 不相交并集   |
+| Cartesian Product        | 笛卡尔积     |

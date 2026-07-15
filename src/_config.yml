@@ -4,7 +4,7 @@
 title: 'OCaml 编程：正确 + 高效 + 优雅'
 author: Michael R. Clarkson et al.
 copyright: "2026"
-logo: op_title.png
+logo: op_title-zh.png
 only_build_toc_files: true
 
 sphinx:
