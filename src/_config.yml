@@ -68,14 +68,14 @@ parse:
     # too.
     ex: |
       ---
-      **Exercise: %%_NAME%% [%%STARS%%]**
+      **练习： %%_NAME%% [%%STARS%%]**
     ex1: '{{ ex | replace("%%STARS%%", "&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex2: '{{ ex | replace("%%STARS%%", "&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex3: '{{ ex | replace("%%STARS%%", "&starf;&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex4: '{{ ex | replace("%%STARS%%", "&starf;&starf;&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     solutions: |
-      Solutions to most exercises are <a href="https://github.com/cs3110/textbook-solutions">available</a>.
-      We are happy to add or correct solutions. Please make contributions through GitHub.
+      大部分习题解答均可访问<a href="https://github.com/OCaml-zh/cs3110-solutions-zh">此处</a>获得。
+      我们非常乐于添加或更正习题解答。请通过 GitHub 提交贡献。
     code_link: '<a href="../../code/%%NAME%%">%%NAME%%</a>'
   # Extensions to enable in the myst parser. See
   # https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
