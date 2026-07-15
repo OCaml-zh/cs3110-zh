@@ -102,8 +102,7 @@ the sweet syntax into the more primitive syntax is called *desugaring*.
 `[e1; e2; ...; en]` 都可以改用更【原语|Primitive】的 nil 和 cons
 语法来写：`e1 :: e2 :: ... :: en :: []`。当一种好用的语法可以在语言中
 用更原语的语法来定义时，我们称这种好用的语法为【语法糖|Syntactic Sugar】：
-它让语言变得「更甜」。将这种甜美的语法转换为更原始语法的过程称为
-【脱糖|Desugaring】。
+它让语言变得「更甜」。将这种甜美的语法转换为更原始语法的过程称为【脱糖|Desugaring】。
 
 <!--
 Because the elements of the list can be arbitrary expressions, lists can be
@@ -315,8 +314,8 @@ Or, noting that the first `|` after `with` is optional regardless of how many
 lines we use, we could also write:
 -->
 
-或者，注意无论我们使用多少行，`with` 后的第一个 `|` 都是
-【可选|Optional】的，所以我们也可以写成：
+或者，注意无论我们使用多少行，`with` 后的第一个 `|`
+都是【可选|Optional】的，所以我们也可以写成：
 
 ```{code-cell} ocaml
 let rec sum xs = match xs with [] -> 0 | x :: xs' -> x + sum xs'
@@ -437,8 +436,8 @@ deep relationship between induction and recursion; we'll explore that
 relationship in more detail later in the book.
 -->
 
-注意，上面的所有【递归函数|Recursive Function】都类似于对【自然数|Natural Number】
-做【归纳法证明|Proof By Induction】：
+注意，上面的所有【递归函数|Recursive Function】都类似于对
+【自然数|Natural Number】 做 【归纳法证明|Proof By Induction】：
 每个自然数要么是 0，要么比某个其他自然数 $n$ 大 1，
 因此归纳法证明有一个针对 0 的【基本情况|Base Case】，
 以及一个针对 $n + 1$ 的【归纳情况|Inductive Case】。
@@ -523,8 +522,8 @@ perform an optimization.
 事实上，编译器采用的是后一种方式，所以没有必要担心。编译器实现共享之所以相当安全，
 原因正是列表元素不可变。如果它们反而是【可变|Mutable】的，
 那么我们就会开始担心我的列表是否与你的列表共享，以及我做出的改变是否会在你的列表中可见。
-因此，【不可变性|Immutability】让代码更容易【推理|Reason About】，
-也能让编译器安全地执行【优化|Optimization】。
+因此，【不可变性|Immutability】让代码更容易【推理|Reason】，
+也能让编译器安全地执行优化。
 
 <!--
 ## Pattern Matching with Lists
@@ -589,7 +588,7 @@ As we learn more of data structures available in OCaml, we'll expand
 the possibilities for what a pattern may be.
 -->
 
-随着我们学习 OCaml 中更多可用的【数据结构|Data Structure】，
+随着我们学习 OCaml 中更多可用的数据结构，
 我们会扩展模式可能具有的形式。
 
 **动态语义**
@@ -786,8 +785,9 @@ match 1 :: [] with
 
 * 在 `h = 1 && t = []` 内替换 {`h->1`,`t->[]`}，会产生一个新的表达式 `1 = 1 && [] = []`。
 
-* 对 `1 = 1 && [] = []` 求值会产生值 `true`。这里我们省略这个事实的
-  【论证|Justification】，但它来自内置运算符和【函数应用|Function Application】的其他求值规则。
+* 对 `1 = 1 && [] = []` 求值会产生值 `true`。
+  这里我们省略这个事实的【论证|Justification】，
+  但它来自内置运算符和【函数应用|Function Application】的其他求值规则。
 
 * 所以整个匹配表达式的结果是 `true`。
 
@@ -814,8 +814,9 @@ list expressions.
 -->
 
 这条规则依赖于能够【判断|Judge】一个模式是否具有某个【特定类型|Particular Type】。
-和往常一样，【类型推断|Type Inference】在这里发挥作用。OCaml 编译器会推断任何
-【模式变量|Pattern Variable】的类型，以及通配符模式所有出现位置的类型。至于列表模式，
+和往常一样，【类型推断|Type Inference】在这里发挥作用。
+OCaml 编译器会推断任何【模式变量|Pattern Variable】的类型，
+以及通配符模式所有出现位置的类型。至于列表模式，
 它们具有与【列表表达式|List Expression】相同的类型检查规则。
 
 <!--
@@ -864,7 +865,7 @@ HTML. That is currently an [open issue with JupyterBook][issue], the framework
 used to build this book.
 -->
 
-抱歉，上面单元格的输出在 HTML 中被拆成了很多行。
+抱歉，上面单元格的输出在 HTML 中被拆成了多行。
 这目前是 [JupyterBook 的一个未解决问题][issue]，JupyterBook 是用于构建本书的框架。
 
 [issue]: https://github.com/executablebooks/jupyter-book/issues/973
@@ -912,8 +913,8 @@ the dynamic semantics of match expressions:
 -->
 
 下面是一个最常见的导致「未使用匹配分支」警告的错误示例。
-理解它也是检验你对【匹配表达式|Match Expression】的【动态语义|Dynamic Semantics】
-掌握程度的好方法：
+理解它也是检验你对 【匹配表达式|Match Expression】
+的 【动态语义|Dynamic Semantics】掌握程度的好方法：
 
 ```{code-cell} ocaml
 let length_is lst n =
@@ -941,7 +942,7 @@ are no such occurrences. So we're done, and the result of evaluation is just
 假设 `lst` 的长度为 5。那么模式匹配就变成了：
 `match 5 with n -> true | _ -> false`。`n` 能匹配 5 吗？
 能，根据上面的规则：【变量模式|Variable Pattern】能匹配任何值，
-并在这里产生【绑定|Binding】`n->5`。然后求值将该绑定应用到 `true`，
+并在这里产生【绑定|Binding】 `n->5`。然后求值将该绑定应用到 `true`，
 将 `true` 内部所有出现的 `n` 替换为 5。然而，
 并没有这样的出现。所以求值完成，结果就是 `true`。
 
@@ -1005,7 +1006,9 @@ extra code. Here's an example: instead of
 
 当你的函数对最后一个参数立即进行【模式匹配|Pattern Matching】时，
 有一种巧妙的【语法糖|Syntactic Sugar】可以让你避免编写额外的代码。
-下面是一个例子：与其写成
+下面是一个例子：
+
+除了写成
 
 ```{code-cell} ocaml
 let rec sum lst =
@@ -1018,7 +1021,7 @@ let rec sum lst =
 you can write
 -->
 
-你也可以写成
+外，你也可以写成
 
 ```{code-cell} ocaml
 let rec sum = function
@@ -1264,8 +1267,8 @@ It would be worthwhile to study the definition of `--` to convince yourself that
 you understand (i) how it works and (ii) why it is tail recursive.
 -->
 
-值得研究一下 `--` 的定义，以确信你理解 (i) 它是如何工作的，
-以及 (ii) 为什么它是【尾递归|Tail Recursive】的。
+值得研究一下 `--` 的定义，以确信你理解 (1) 它是如何工作的，
+以及 (2) 为什么它是【尾递归|Tail Recursive】的。
 
 <!--
 You might in the future decide you want to create such a list again. Rather than
@@ -1289,4 +1292,4 @@ and it does so tail recursively if `len` is bigger than 10,000. Function
 
 表达式 `List.init len f` 可创建列表 `[f 0; f 1; ...; f (len - 1)]`，
 如果 `len` 大于 10,000，它会以尾递归方式完成。
-函数 `Fun.id` 就是【恒等函数|Identity Function】`fun x -> x`。
+函数 `Fun.id` 就是【恒等函数|Identity Function】 `fun x -> x`。
