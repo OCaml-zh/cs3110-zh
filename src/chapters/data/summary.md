@@ -66,66 +66,68 @@ OCaml 变体实际上将几个理论上独立的语言特性结合为一个：
 
 ## 术语与概念
 
-* 【代数数据类型|Algebraic Data Type】
-* 【追加|Append】
-* 【关联列表|Association List】
-* 【作为变体的二叉树|】
-* 【绑定|Binding】
-* 【分支|Branch】
-* 【携带数据|Carried Data】
-* 【兜底情况|Catch-All Cases】
-* cons
-* 【常量构造子|Constant Constructor】
-* 【构造子|Constructor】
-* 【复制|Copying】
-* 【脱糖|Desugaring】
-* 【兼具类型|Each-Of Type】
-* 【异常|Exception】
-* 【作为变体的异常|Exception As Variants】
-* 【异常包|Exception Packet】
-* 【异常模式|Exception Pattern】
-* 【异常值|Exception Value】
-* 【穷尽性|Exhaustiveness】
-* 【字段|Field】
-* 【头部|Head】
-* 【归纳|Induction】
-* 【叶子|Leaf】
-* 【列表|List】
-* 【作为变体的列表|Lists As Variants】
-* 【也许类型|Maybe Type】
-* 【互递归函数|Mutually Recursive Functions】
-* 【作为变体的自然数|】
-* nil
-* 【节点|Node】
-* 【非常量构造子|Non-Constant Constructor】
-* 【择一类型|One-Of Type】
-* 【选项|Option】
-* 【作为变体的选项|Options As Variants】
-* 【求值顺序|Order Of Evaluation】
-* 【偶对|Pair】
-* 【参数化变体|Parameterized Variant】
-* 【参数多态|Parametric Polymorphism】
-* 【模式匹配|Pattern Matching】
-* 【前置|Prepend】
-* 【积类型|Product Type】
-* 【记录|Record】
-* 【递归|Recursion】
-* 【递归变体|Recursive Variant】
-* 【共享|Share】
-* 【栈帧|Stack Frame】
-* 【和类型|Sum Type】
-* 【语法糖|Syntactic Sugar】
-* 【标签|Tag】
-* 【尾部|Tail】
-* 【尾调用|Tail Call】
-* 【尾递归|Tail Recursion】
-* 【测试驱动开发|Test-Driven Development】（Tdd）
-* 【三元组|Triple】
-* 【元组|Tuple】
-* 【类型构造子|Type Constructor】
-* 【类型同义词|Type Synonym】
-* 【变体|Variant】
-* 【通配符|Wildcard】
+| 中文             | 英语                           |
+| ---------------- | ------------------------------ |
+| 代数数据类型     | Algebraic Data Type            |
+| 追加             | Append                         |
+| 关联列表         | Association List               |
+| 作为变体的二叉树 | Bianry Tree as Variants        |
+| 绑定             | Binding                        |
+| 分支             | Branch                         |
+| 携带数据         | Carried Data                   |
+| 兜底情况         | Catch-All Cases                |
+| cons             | cons                           |
+| 常量构造子       | Constant Constructor           |
+| 构造子           | Constructor                    |
+| 复制             | Copying                        |
+| 脱糖             | Desugaring                     |
+| 兼具类型         | Each-of Type                   |
+| 异常             | Exception                      |
+| 作为变体的异常   | Exception As Variants          |
+| 异常包           | Exception Packet               |
+| 异常模式         | Exception Pattern              |
+| 异常值           | Exception Value                |
+| 穷尽性           | Exhaustiveness                 |
+| 字段             | Field                          |
+| 头部             | Head                           |
+| 归纳             | Induction                      |
+| 叶子             | Leaf                           |
+| 列表             | List                           |
+| 作为变体的列表   | Lists as Variants              |
+| 也许类型         | Maybe Type                     |
+| 互递归函数       | Mutually Recursive Functions   |
+| 作为变体的自然数 | Natural as Variants            |
+| nil              | nil                            |
+| 节点             | Node                           |
+| 非常量构造子     | Non-Constant Constructor       |
+| 择一类型         | One-of Type                    |
+| 选项             | Option                         |
+| 作为变体的选项   | Options as Variants            |
+| 求值顺序         | Order of Evaluation            |
+| 偶对             | Pair                           |
+| 参数化变体       | Parameterized Variant          |
+| 参数多态         | Parametric Polymorphism        |
+| 模式匹配         | Pattern Matching               |
+| 前置             | Prepend                        |
+| 积类型           | Product Type                   |
+| 记录             | Record                         |
+| 递归             | Recursion                      |
+| 递归变体         | Recursive Variant              |
+| 共享             | Share                          |
+| 栈帧             | Stack Frame                    |
+| 和类型           | Sum Type                       |
+| 语法糖           | Syntactic Sugar                |
+| 标签             | Tag                            |
+| 尾部             | Tail                           |
+| 尾调用           | Tail Call                      |
+| 尾递归           | Tail Recursion                 |
+| 测试驱动开发     | Test-Driven Development（TDD） |
+| 三元组           | Triple                         |
+| 元组             | Tuple                          |
+| 类型构造子       | Type Constructor               |
+| 类型同义词       | Type Synonym                   |
+| 变体             | Variant                        |
+| 通配符           | Wildcard                       |
 
 ## 延伸阅读
 
