@@ -96,7 +96,7 @@ OCaml 变体实际上将几个理论上独立的语言特性结合为一个：
 | 作为变体的列表   | Lists as Variants              |
 | 也许类型         | Maybe Type                     |
 | 互递归函数       | Mutually Recursive Functions   |
-| 作为变体的自然数 | Natural as Variants            |
+| 作为变体的自然数 | Natural Numbers as Variants    |
 | nil              | nil                            |
 | 节点             | Node                           |
 | 非常量构造子     | Non-Constant Constructor       |

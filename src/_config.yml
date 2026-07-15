@@ -68,7 +68,7 @@ parse:
     # too.
     ex: |
       ---
-      **练习： %%_NAME%% [%%STARS%%]**
+      **练习：%%_NAME%% [%%STARS%%]**
     ex1: '{{ ex | replace("%%STARS%%", "&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex2: '{{ ex | replace("%%STARS%%", "&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex3: '{{ ex | replace("%%STARS%%", "&starf;&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
