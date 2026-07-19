@@ -1,22 +1,27 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 'OCaml Programming: Correct + Efficient + Beautiful'
+title: 'OCaml 编程：正确 + 高效 + 优雅'
 author: Michael R. Clarkson et al.
 copyright: "2026"
-logo: op_title.png
+logo: op_title-zh.png
 only_build_toc_files: true
 
 sphinx:
   config:
     # Specifying the language can improve accessibility in screen readers
     # and translators
-    language: en
+    language: zh_CN
     # All files from these paths will be included in the generated
     # HTML output, even if they are not linked from any page
     html_extra_path: ['assets']
     # Favicon
     html_favicon: op.png
+    # 确保 Sphinx 会读取 _static 目录下的静态文件
+    html_static_path: ["_static"]
+    # 引入 JS 并添加 defer 属性
+    html_js_files:
+      - ["custom.js", {"defer": "defer"}]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -63,14 +68,14 @@ parse:
     # too.
     ex: |
       ---
-      **Exercise: %%_NAME%% [%%STARS%%]**
+      **练习： %%_NAME%% [%%STARS%%]**
     ex1: '{{ ex | replace("%%STARS%%", "&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex2: '{{ ex | replace("%%STARS%%", "&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex3: '{{ ex | replace("%%STARS%%", "&starf;&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     ex4: '{{ ex | replace("%%STARS%%", "&starf;&starf;&starf;&starf;") | replace("%%_NAME%%", "%%NAME%%")}}'
     solutions: |
-      Solutions to most exercises are <a href="https://github.com/cs3110/textbook-solutions">available</a>.
-      We are happy to add or correct solutions. Please make contributions through GitHub.
+      大部分习题解答均可访问<a href="https://github.com/OCaml-zh/cs3110-solutions-zh">此处</a>获得。
+      我们非常乐于添加或更正习题解答。请通过 GitHub 提交贡献。
     code_link: '<a href="../../code/%%NAME%%">%%NAME%%</a>'
   # Extensions to enable in the myst parser. See
   # https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
