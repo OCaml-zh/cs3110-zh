@@ -116,9 +116,7 @@ that multiplies its input by 2. For example, `double 7` would be `14`. Test your
 function by applying it to a few inputs. Turn those test cases into assertions.
 -->
 
-以上面的递增函数为指导，定义一个【函数|Function】 `double`，将其输入乘以 2。
-例如，`double 7` 应该是 `14`。通过将其应用于几个输入来测试你的函数。
-将这些测试用例转换为断言。
+以上面的递增函数为指导，定义一个【函数|Function】 `double`，将其输入乘以 2。例如，`double 7` 应该是 `14`。通过将其应用于几个输入来测试你的函数。将这些测试用例转换为断言。
 
 <!--------------------------------------------------------------------------->
 {{ ex2 | replace("%%NAME%%", "more fun")}}
@@ -151,8 +149,7 @@ enough", e.g., within 1e-5. If that's unfamiliar to you, it would be worthwhile
 to read up on [floating-point arithmetic][fparith].
 -->
 
-对于后者，请记住浮点算术不是精确的。你应该断言结果「足够接近」，例如在 1e-5 范围内，而非断言精确值。
-如果你对此不熟悉，建议阅读[浮点算术][fparith]。
+对于后者，请记住浮点算术不是精确的。你应该断言结果「足够接近」，例如在 1e-5 范围内，而非断言精确值。如果你对此不熟悉，建议阅读[浮点算术][fparith]。
 
 [fparith]: https://floating-point-gui.de/
 
@@ -162,8 +159,7 @@ names for those inputs as part of the let definition. For example, the following
 function computes the average of three arguments:
 -->
 
-接受多个输入的函数可以通过在 let 定义中为这些输入提供额外的名称来定义。
-例如，以下函数计算三个参数的平均值：
+接受多个输入的函数可以通过在 let 定义中为这些输入提供额外的名称来定义。例如，以下函数计算三个参数的平均值：
 
 ```ocaml
 let avg3 x y z = (x +. y +. z) /. 3.
@@ -192,11 +188,7 @@ Jan, then the day is between 1 and 31, inclusive, whereas if the month is Feb,
 then the day is between 1 and 28, inclusive.
 -->
 
-定义一个函数，它接受整数 `d` 和字符串 `m` 作为输入，仅当 `d` 和 `m` 构成*有效日期*时返回 `true`。
-这里，有效日期的月份是以下缩写之一：Jan、Feb、Mar、Apr、May、Jun、Jul、Aug、Sept、Oct、Nov、Dec。
-日期必须是介于 1 和该月最小天数之间的数字（含端点）。
-例如，如果月份是 Jan，则日期在 1 到 31 之间（含端点），
-而如果月份是 Feb，则日期在 1 到 28 之间（含端点）。
+定义一个函数，它接受整数 `d` 和字符串 `m` 作为输入，仅当 `d` 和 `m` 构成*有效日期*时返回 `true`。这里，有效日期的月份是以下缩写之一：Jan、Feb、Mar、Apr、May、Jun、Jul、Aug、Sept、Oct、Nov、Dec。日期必须是介于 1 和该月最小天数之间的数字（含端点）。例如，如果月份是 Jan，则日期在 1 到 31 之间（含端点），而如果月份是 Feb，则日期在 1 到 28 之间（含端点）。
 
 <!--
 How terse (i.e., few and short lines of code) can you make your function? You
@@ -255,11 +247,7 @@ those are computed separately, a lot of work (an exponential amount, in fact) is
 being redone.
 -->
 
-你的 `fib` 实现计算第 50 个斐波那契数有多快？
-如果它几乎是瞬间完成的，恭喜！但大多数人最初想到的递归解决方案似乎会无限期挂起。
-问题在于显而易见的解决方案会重复计算子问题。
-例如，计算 `fib 5` 需要同时计算 `fib 3` 和 `fib 4`，
-如果它们被分别计算，大量工作（实际上是指数级的）会被重复执行。
+你的 `fib` 实现计算第 50 个斐波那契数有多快？如果它几乎是瞬间完成的，恭喜！但大多数人最初想到的递归解决方案似乎会无限期挂起。问题在于显而易见的解决方案会重复计算子问题。例如，计算 `fib 5` 需要同时计算 `fib 3` 和 `fib 4`，如果它们被分别计算，大量工作（实际上是指数级的）会被重复执行。
 
 <!--
 Create a function `fib_fast` that requires only a linear amount of work. *Hint:*
@@ -267,8 +255,7 @@ write a recursive helper function `h : int -> int -> int -> int`, where
 `h n pp p` is defined as follows:
 -->
 
-创建一个只需要线性工作量的函数 `fib_fast`。*提示：*
-编写一个递归辅助函数 `h : int -> int -> int -> int`，其中 `h n pp p` 定义如下：
+创建一个只需要线性工作量的函数 `fib_fast`。*提示：*编写一个递归辅助函数 `h : int -> int -> int -> int`，其中 `h n pp p` 定义如下：
 
 <!--
 - `h 1 pp p = p`, and
@@ -288,8 +275,7 @@ and `p`, then computes forward `n` more numbers. Hence, `fib n = h n 0 1` for
 any `n > 0`.
 -->
 
-`h` 的思想是假设前两个斐波那契数是 `pp` 和 `p`，然后向前计算 `n` 个数。
-因此，对于任何 `n > 0`，`fib n = h n 0 1`。
+`h` 的思想是假设前两个斐波那契数是 `pp` 和 `p`，然后向前计算 `n` 个数。因此，对于任何 `n > 0`，`fib n = h n 0 1`。
 
 <!--
 What is the first value of `n` for which `fib_fast n` is negative, indicating
@@ -334,8 +320,7 @@ produces an integer, which produces a function, and which produces an error?
 Decide on an answer, then check your answer in the toplevel.
 -->
 
-假设我们定义了 `let add x y = x + y`。以下哪个产生整数，哪个产生函数，哪个产生错误？
-决定答案，然后在顶层环境中检查你的答案。
+假设我们定义了 `let add x y = x + y`。以下哪个产生整数，哪个产生函数，哪个产生错误？决定答案，然后在顶层环境中检查你的答案。
 
 * `add 5 1`
 * `add 5`

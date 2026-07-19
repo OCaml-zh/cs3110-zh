@@ -11,8 +11,7 @@ emphasis on semantics and software engineering. This book is the textbook for CS
 title of this book was "Functional Programming in OCaml".
 -->
 
-这是一本关于 OCaml 中函数式编程与数据结构的教材，重点强调语义与软件工程。本书是康奈尔大学 CS 3110《数据结构与函数式编程》课程的教材。本书过去曾使用过
-《OCaml 函数式编程》这个书名。
+这是一本关于 OCaml 中函数式编程与数据结构的教材，重点强调语义与软件工程。本书是康奈尔大学 CS 3110《数据结构与函数式编程》课程的教材。本书过去曾使用过《OCaml 函数式编程》这个书名。
 
 <!--
 **Spring 2026 Edition.**
@@ -47,9 +46,7 @@ href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
 Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 -->
 
-**版权 2021–2026 Michael R. Clarkson。** 本书依据 <a rel="license"
-href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
-署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议</a> 发布。
+**版权 2021–2026 Michael R. Clarkson。** 本书依据 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons 署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议</a> 发布。
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
 <img alt="Creative Commons License" style="border-width:0"
