@@ -66,42 +66,44 @@ throughout the course to deepen our understanding.
 * values
 -->
 
-* 匿名函数
-* 断言
-* 绑定
-* 绑定表达式
-* 主体表达式
-* 调试
-* 防御式编程
-* 定义
-* 文档
-* 动态语义
-* 求值
-* 表达式
-* 函数应用
-* 函数定义
-* 标识符
-* 习惯用法
-* if 表达式
-* lambda 表达式
-* let 定义
-* let 表达式
-* 库
-* 元变量
-* 相互递归
-* 管道运算符
-* 后置条件
-* 前置条件
-* 输出
-* 递归
-* 语义
-* 静态语义
-* 替换
-* 语法
-* 工具
-* 类型检查
-* 类型推断
-* 值
+| 中文         | 英语                  |
+| ------------ | --------------------- |
+| 匿名函数     | Anonymous Functions   |
+| 断言         | Assertions            |
+| 绑定         | Binding               |
+| 绑定表达式   | Binding Expression    |
+| 主体表达式   | Body Expression       |
+| 调试         | Debugging             |
+| 防御式编程   | Defensive Programming |
+| 定义         | Definitions           |
+| 文档         | Documentation         |
+| 动态语义     | Dynamic Semantics     |
+| 求值         | Evaluation            |
+| 表达式       | Expressions           |
+| 函数应用     | Function Application  |
+| 函数定义     | Function Definitions  |
+| 标识符       | Identifiers           |
+| 习惯用法     | Idioms                |
+| if 表达式    | If Expressions        |
+| lambda 表达式 | Lambda Expressions    |
+| let 定义     | Let Definition        |
+| let 表达式   | Let Expression        |
+| 库           | Libraries             |
+| 元变量       | Metavariables         |
+| 相互递归     | Mutual Recursion      |
+| 管道运算符   | Pipeline Operator     |
+| 后置条件     | Postcondition         |
+| 前置条件     | Precondition          |
+| 输出         | Printing              |
+| 递归         | Recursion             |
+| 语义         | Semantics             |
+| 静态语义     | Static Semantics      |
+| 替换         | Substitution          |
+| 语法         | Syntax                |
+| 工具         | Tools                 |
+| 类型检查     | Type Checking         |
+| 类型推断     | Type Inference        |
+| 值           | Values                |
 
 <!--
 ## Further Reading

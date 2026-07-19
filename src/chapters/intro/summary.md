@@ -37,18 +37,20 @@ of beauty.
 * type safety
 -->
 
-* 动态类型
-* 一等函数
-* 函数式编程语言
-* 不可变性
-* Lisp
-* ML
-* OCaml
-* 引用透明性
-* 副作用
-* 状态
-* 静态类型
-* 类型安全
+| 中文             | 英语                             |
+| ---------------- | -------------------------------- |
+| 动态类型         | Dynamic Typing                   |
+| 一等函数         | First-Class Functions            |
+| 函数式编程语言   | Functional Programming Languages |
+| 不可变性         | Immutability                     |
+| Lisp             | Lisp                             |
+| ML               | ML                               |
+| OCaml            | OCaml                            |
+| 引用透明性       | Referential Transparency         |
+| 副作用           | Side Effects                     |
+| 状态             | State                            |
+| 静态类型         | Static Typing                    |
+| 类型安全         | Type Safety                      |
 
 <!--
 ## Further Reading
