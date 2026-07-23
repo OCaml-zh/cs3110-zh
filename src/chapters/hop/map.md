@@ -27,7 +27,7 @@ Here are two functions we might want to write:
 
 以下是我们可能想要编写的两个函数：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 (** [add1 lst] adds 1 to each element of [lst]. *)
 let rec add1 = function
   | [] -> []
@@ -36,7 +36,7 @@ let rec add1 = function
 let lst1 = add1 [1; 2; 3]
 ```
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 (** [concat_bang lst] concatenates "!" to each element of [lst]. *)
 let rec concat_bang = function
   | [] -> []
@@ -70,7 +70,7 @@ that difference even more explicit:
 实际上唯一的区别（除了它们的名称）是它们对头部元素的操作：加法 vs. 连接。
 让我们重写这两个函数以使这个区别更加明显：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 (** [add1 lst] adds 1 to each element of [lst]. *)
 let rec add1 = function
   | [] -> []
@@ -97,7 +97,7 @@ one helper function out from each main function and make it an argument:
 当函数之间的差异如此之小时，为什么要重复所有这些代码呢？
 我们不妨从每个主函数中**抽象**出那个辅助函数，使其成为一个参数：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec add1' f = function
   | [] -> []
   | h :: t -> f h :: add1' f t
@@ -127,7 +127,7 @@ function to each element of the list:
 我们不妨只保留其中一个，并为它想一个好的新名称。
 一种可能性是 `transform`，因为它们通过将函数应用于列表的每个元素来转换列表：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec transform f = function
   | [] -> []
   | h :: t -> f h :: transform f t
@@ -181,7 +181,7 @@ make one final change to that name:
 但 OCaml 和许多其他语言（包括 Java 和 Python）使用更短的词【映射|Map】，
 这个名字来源于数学中函数如何将输入映射到输出。所以让我们对该名称做最后一次更改：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec map f = function
   | [] -> []
   | h :: t -> f h :: map f t
@@ -230,7 +230,7 @@ causes the list elements to be printed in what might seem like reverse order:
 OCaml 语言规范通常不指定子表达式的求值顺序，而当前的语言实现通常从右到左求值。
 因此，以下（相当人为的）代码实际上会导致列表元素以看似相反的顺序打印：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let p x = print_int x; print_newline(); x + 1
 
 let lst = map p [1; 2]
@@ -267,7 +267,7 @@ before the recursive call:
 这对于倾向于认为求值会从左到右发生的人来说可能是令人惊讶的。
 解决方案是使用 `let` 表达式来使函数应用的求值在递归调用之前发生：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec map f = function
   | [] -> []
   | h :: t -> let h' = f h in h' :: map f t
@@ -325,7 +325,7 @@ to create a tail-recursive version of it:
 敏锐的读者会注意到 `map` 的实现不是【尾递归|Tail Recursive】的。
 这在某种程度上是不可避免的。以下是创建其尾递归版本的一种诱人但糟糕的方式：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec map_tr_aux f acc = function
   | [] -> acc
   | h :: t -> map_tr_aux f (acc @ [f h]) t
@@ -360,7 +360,7 @@ of the linear-time append operation:
 
 为了尝试修复这个问题，我们可以使用常数时间的 cons 操作而非线性时间的追加操作：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec map_tr_aux f acc = function
   | [] -> acc
   | h :: t -> map_tr_aux f (f h :: acc) t
@@ -439,7 +439,7 @@ is, a (tail-recursive) map function that returns its output in reverse order.
 
 因此，标准库将此函数称为 `List.rev_map`，即一个以反向顺序返回输出的（尾递归的）映射函数。
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let rec rev_map_aux f acc = function
   | [] -> acc
   | h :: t -> rev_map_aux f (f h :: acc) t
@@ -456,7 +456,7 @@ to it:
 
 如果你想要「正确」顺序的输出，这很简单：只需对其应用 `List.rev`：
 
-```\{code-cell\} ocaml
+```{code-cell} ocaml
 let lst = List.rev (List.rev_map (fun x -> x + 1) [1; 2; 3])
 ```
 
