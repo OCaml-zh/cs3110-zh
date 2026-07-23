@@ -39,7 +39,9 @@ access values of each of those data types. And pattern matching can be used in
 let expressions and functions.
 -->
 
-OCaml 为【变体|Variant】（择一类型）、【元组|Tuple】和积类型（兼具类型）以及【选项|Option】（也许类型）提供了数据类型。
+OCaml 为【变体|Variant】（【择一类型|One-of Type】）、
+【元组|Tuple】和【积类型|Product Type】（【兼具类型|Each-of Type】）
+以及【选项|Option】（【也许类型|Maybe Type】）提供了数据类型。
 【模式匹配|Pattern Matching】可用于访问这些数据类型的值。
 模式匹配也可用于 let 表达式和函数。
 
@@ -110,7 +112,7 @@ OCaml 变体实际上将几个理论上独立的语言特性结合为一个：
 | 模式匹配         | Pattern Matching               |
 | 前置             | Prepend                        |
 | 积类型           | Product Type                   |
-| 记录             | Record                         |
+| 记录体           | Record                         |
 | 递归             | Recursion                      |
 | 递归变体         | Recursive Variant              |
 | 共享             | Share                          |

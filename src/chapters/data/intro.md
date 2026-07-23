@@ -11,21 +11,21 @@ familiar from other programming languages. In particular,
 -->
 
 在本章中，我们将研究 OCaml 的一些内置【数据类型|Data Type】，
-包括【列表|List】、【变体|Variant】、【记录|Record】、【元组|Tuple】和【选项|Option】。
+包括【列表|List】、【变体|Variant】、【记录体|Record】、【元组|Tuple】和【可选|Option】。
 其中许多类型可能会让你感到似曾相识，尤其是：
 
 <!--
 - **lists** and **tuples**, might feel similar to Python; and
 -->
 
-- 【列表|LIst】和【元组|Tuple】，可能与 Python 中的类似；
+- 【列表|List】和【元组|Tuple】，可能与 Python 中的类似；
 
 <!--
 - **records** and **variants**, might feel similar to `struct` and `enum` types
   from C or Java.
 -->
 
-- 【记录|Record】和【变体|Variant】，可能感觉与 C 或 Java 中的 `struct` 和 `enum` 类型类似。
+- 【记录体|Record】和【变体|Variant】，可能感觉与 C 或 Java 中的 `struct` 和 `enum` 类型类似。
 
 <!--
 Because of that familiarity, we call these *standard* data types. We'll learn

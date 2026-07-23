@@ -175,3 +175,22 @@
 | Triple                   | 三元组       |
 | Disjoint Union           | 不相交并集   |
 | Cartesian Product        | 笛卡尔积     |
+| Higher-Order Function    | 高阶函数     |
+| Functional Programming   | 函数式编程   |
+| Closure                  | 闭包         |
+| Abstraction Principle    | 抽象原则     |
+| Characteristic Function  | 特征函数     |
+| Higher-Order Logic       | 高阶逻辑     |
+| First-Order Function     | 一阶函数     |
+| Filter                   | 过滤         |
+| Fold                     | 折叠         |
+| Side Effects             | 副作用       |
+| Partial Application      | 偏函数应用   |
+| Evaluation Order         | 求值顺序     |
+| Predicate                | 谓词         |
+| Accumulator              | 累加器       |
+| Fold Right               | 右折叠       |
+| Fold Left                | 左折叠       |
+| Labeled Arguments        | 标签参数     |
+| Associative              | 结合律       |
+| Commutative              | 交换律       |

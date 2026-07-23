@@ -234,7 +234,7 @@ The video linked above also uses records and tuples as examples. Those are
 covered in a [later section](records_tuples) of this book.
 -->
 
-上面链接的视频还使用了【记录|Record】和【元组|Tuple】作为例子。
+上面链接的视频还使用了【记录体|Record】和【元组|Tuple】作为例子。
 本书的[后续小节](records_tuples)会介绍它们。
 ```
 

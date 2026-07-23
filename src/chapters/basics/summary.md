@@ -11,7 +11,9 @@ their syntax and semantics. We've seen that there can be multiple syntaxes for
 expressing the same semantic idea, that is, the same computation.
 -->
 
-语法与语义是一种学习编程语言的强大范式。当我们学习 OCaml 的各种特性时，也在很谨慎地记录它们的语法与语义。我们已经看到：同一个语义思想，也就是同一种计算，往往可以通过多种不同的语法来表达。
+语法与语义是一种学习编程语言的强大范式。当我们学习 OCaml 的各种特性时，
+也在很谨慎地记录它们的语法与语义。我们已经看到：同一个语义思想，
+也就是同一种计算，往往可以通过多种不同的语法来表达。
 
 <!--
 The semantics of function application is the very heart of OCaml and of
