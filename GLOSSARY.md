@@ -194,3 +194,22 @@
 | Labeled Arguments        | 标签参数     |
 | Associative              | 结合律       |
 | Commutative              | 交换律       |
+| Ternary                  | 三元         |
+| Binary                   | 二元         |
+| Catamorphism             | 态射         |
+| Generalized Fold         | 广义折叠     |
+| Pruning                  | 剪枝         |
+| Data Collection          | 数据集合     |
+| Pipelining               | 管道化       |
+| Tradeoff                 | 权衡         |
+| Currying                 | 柯里化       |
+| Uncurried                | 反柯里化     |
+| Compose                  | 组合         |
+| Factor                   | 提取         |
+| Functional               | 函数式       |
+| Pipeline                 | 管道         |
+| Matrix                   | 矩阵         |
+| Row-Major                | 行优先       |
+| Row Vector               | 行向量       |
+| Transpose                | 转置         |
+| Dot Product              | 点积         |

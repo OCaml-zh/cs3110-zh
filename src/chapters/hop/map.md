@@ -472,7 +472,8 @@ worry about tail recursion (which is to say, about stack space) until lists have
 -->
 
 由于 `List.rev` 既是线性时间又是尾递归的，这产生了一个完整的解决方案。
-我们得到了一个线性时间和尾递归的映射计算。代价是它需要对列表进行两次遍历：一次用于转换，另一次用于反转。
+我们得到了一个线性时间和尾递归的映射计算。代价是它需要对列表进行两次遍历：
+一次用于转换，另一次用于反转。
 我们无法在单链表上比这效率更好。当然，还有其他实现列表的数据结构，我们最终会接触到它们。
 同时，回想一下，我们通常不需要担心尾递归（也就是说，栈空间），直到列表有 10,000 个或更多元素。
 
@@ -521,7 +522,8 @@ output as needed. Here again we see the theme of "when does it get evaluated?"
 returning.
 -->
 
-我们必须使用 `list` 函数将 `map` 的结果转换回列表，因为 Python 为了效率会根据需要产生 `map` 输出的每个元素。
+我们必须使用 `list` 函数将 `map` 的结果转换回列表，
+因为 Python 为了效率会根据需要产生 `map` 输出的每个元素。
 这里我们再次看到了「什么时候被求值？」这个主题的回归。
 
 <!--
@@ -545,4 +547,5 @@ Like in the Python example, we have to use something to convert the stream back
 into a list. In this case it's the `collect` method.
 -->
 
-就像在 Python 示例中一样，我们必须使用某些东西将流转换回列表。在这种情况下，它是 `collect` 方法。
+就像在 Python 示例中一样，我们必须使用某些东西将流转换回列表。
+在这种情况下，它是 `collect` 方法。
