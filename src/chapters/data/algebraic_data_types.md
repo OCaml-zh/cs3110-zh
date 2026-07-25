@@ -150,7 +150,7 @@ sub-value from *each of* their component types.
 这些变体类型的另一个名称是【代数数据类型|Algebraic Data Type】。
 这里的「代数」指的是变体类型既包含【和类型|Sum Type】也包含【积类型|Product Type】，
 正如前面讲座中所定义的那样。和类型来源于变体的值由构造子*之一*形成这一事实。
-积类型来源于构造子可以携带元组或记录，
+积类型来源于构造子可以携带元组或记录体，
 其值具有来自*每个*组件类型的子值。
 
 <!--
@@ -481,7 +481,7 @@ Any such mutual recursion must involve at least one variant or record type
 that the recursion "goes through".  For example, the following is not allowed:
 -->
 
-任何这样的互递归必须涉及至少一个变体或【记录|Record】类型作为递归的「通道」。
+任何这样的互递归必须涉及至少一个变体或【记录体|Record】类型作为递归的「通道」。
 例如，以下形式是不允许的：
 
 ```{code-cell} ocaml
@@ -503,7 +503,7 @@ type t = U of u and u = T of t
 Record types may also be recursive:
 -->
 
-记录类型也可以是递归的：
+记录体类型也可以是递归的：
 
 ```{code-cell} ocaml
 type node = {value : int; next : node}

@@ -24,7 +24,7 @@ data types.  They include:
   `struct` and `enum` types from C or Java.
 -->
 
-- 【记录|Record】和【变体|Variant】，可能与 C 或 Java 中的 `struct` 和 `enum` 类型类似。
+- 【记录体|Record】和【变体|Variant】，可能与 C 或 Java 中的 `struct` 和 `enum` 类型类似。
 
 <!--
 We also take a detour into unit testing.

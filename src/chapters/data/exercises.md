@@ -303,7 +303,7 @@ Give OCaml expressions that have the following types:
   record)
 -->
 
-* `string -> string -> float -> student`（一个创建学生记录的函数）
+* `string -> string -> float -> student`（一个创建学生记录体的函数）
 
 <!--------------------------------------------------------------------------->
 {{ ex2 | replace("%%NAME%%", "pokerecord")}}
@@ -323,21 +323,21 @@ type poketype = Normal | Fire | Water
   (an integer), and `ptype` (a `poketype`).
 -->
 
-* 定义类型 `pokemon` 为一个记录，包含字段 `name`（字符串）、`hp`（整数）和 `ptype`（`poketype`）。
+* 定义类型 `pokemon` 为一个记录体，包含字段 `name`（字符串）、`hp`（整数）和 `ptype`（`poketype`）。
 
 <!--
 * Create a record named `charizard` of type `pokemon` that represents a
   Pok&eacute;mon with 78 HP and Fire type.
 -->
 
-* 创建一个名为 `charizard` 的类型为 `pokemon` 的记录，表示一个拥有 78 HP 和火属性的宝可梦。
+* 创建一个名为 `charizard` 的类型为 `pokemon` 的记录体，表示一个拥有 78 HP 和火属性的宝可梦。
 
 <!--
 * Create a record named `squirtle` of type `pokemon` that represents a
   Pok&eacute;mon with 44 HP and Water type.
 -->
 
-* 创建一个名为 `squirtle` 的类型为 `pokemon` 的记录，表示一个拥有 44 HP 和水属性的宝可梦。
+* 创建一个名为 `squirtle` 的类型为 `pokemon` 的记录体，表示一个拥有 44 HP 和水属性的宝可梦。
 
 <!--------------------------------------------------------------------------->
 {{ ex2 | replace("%%NAME%%", "safe hd and tl")}}
@@ -465,7 +465,7 @@ key 2. Lookup the key 4.
   it a record with two fields.
 -->
 
-* 定义一个类型 `card`，表示单张牌的花色和点数。将其作为包含两个字段的记录。
+* 定义一个类型 `card`，表示单张牌的花色和点数。将其作为包含两个字段的记录体。
 
 <!--
 * Define a few values of type `card`: the Ace of Clubs, the Queen of Hearts, the

@@ -111,7 +111,7 @@ let rec size = function
   | Node (_, l, r) -> 1 + size l + size r
 ```
 
-## 记录表示
+## 记录体表示
 
 <!--
 Next, let's revise our tree type to use a record type to represent a tree node.
@@ -119,7 +119,7 @@ In OCaml we have to define two mutually recursive types, one to represent a tree
 node, and one to represent a (possibly empty) tree:
 -->
 
-接下来，让我们修改树类型以使用【记录|Record】类型来表示树节点。
+接下来，让我们修改树类型以使用【记录体|Record】类型来表示树节点。
 在 OCaml 中，我们必须定义两个互递归的类型，一个表示树节点，一个表示（可能为空的）树：
 
 ```{code-cell} ocaml
