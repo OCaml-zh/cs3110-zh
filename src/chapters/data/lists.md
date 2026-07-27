@@ -33,12 +33,12 @@ through a library (as in C and Java).
 -->
 
 OCaml 【列表|List】是由具有相同【类型|Type】的值组成的【序列|Sequence】。
-它们实现为【单链表|Singly-Linked List】。这些列表在语言中享有
-【一等|First-Class】地位：语言提供了特殊支持，以便轻松创建和使用列表。
+它们实现为【单链表|Singly-Linked List】。这些列表在语言中享有【一等|First-Class】
+地位：语言提供了特殊支持，以便轻松创建和使用列表。
 这是 OCaml 与许多其他【函数式语言|Functional Language】共有的特征。
 主流【命令式语言|Imperative Language】（如 Python）如今也有这样的支持。
 也许这是因为程序员觉得，直接把列表作为语言的一等部分来使用非常愉快，
-而非必须通过一个【库|Library】（如 C 和 Java 中那样）来使用。
+而不必通过一个【库|Library】（像 C 和 Java 那样）来使用。
 
 <!--
 ## Building Lists
@@ -54,7 +54,7 @@ OCaml 【列表|List】是由具有相同【类型|Type】的值组成的【序�
 
 **语法**
 
-有三种构建列表的语法形式：
+列表的构建有三种语法形式：
 
 ```ocaml
 []
@@ -75,8 +75,8 @@ elements (if any) are called its *tail*.
 【空列表|Empty List】写作 `[]`，读作「nil」，这个名称来自 Lisp。
 给定一个列表 `lst` 和【元素|Element】 `elt`，我们可以通过写 `elt :: lst`，
 将 `elt` 【前置|Prepend】到 `lst`。双冒号运算符读作「cons」，
-这个名称来自 Lisp 中的一个运算符，它在内存中【cons|构造】对象。
-「Cons」也可以用作动词，如「我将 cons 一个元素到某个列表」。
+这个名称来自 Lisp 中的一个运算符，它用来在内存中【构造|cons】对象。
+「cons」也可以用作动词，如「我将 cons 一个元素到某个列表」。
 列表的第一个元素通常称为它的【头部|Head】，
 而其余元素（如果有的话）称为它的【尾部|Tail】。
 
@@ -99,9 +99,9 @@ the sweet syntax into the more primitive syntax is called *desugaring*.
 -->
 
 【方括号语法|Square Bracket Syntax】很方便，但并非必要。任何列表
-`[e1; e2; ...; en]` 都可以改用更【原语|Primitive】的 nil 和 cons
+`[e1; e2; ...; en]` 都可以改用更基本的【原语|Primitive】 nil 和 cons
 语法来写：`e1 :: e2 :: ... :: en :: []`。当一种好用的语法可以在语言中
-用更原语的语法来定义时，我们称这种好用的语法为【语法糖|Syntactic Sugar】：
+用更原始的语法来定义时，我们称这种好用的语法为【语法糖|Syntactic Sugar】：
 它让语言变得「更甜」。将这种甜美的语法转换为更原始语法的过程称为【脱糖|Desugaring】。
 
 <!--
@@ -109,15 +109,11 @@ Because the elements of the list can be arbitrary expressions, lists can be
 nested as deeply as we like, e.g., `[[[]]; [[1; 2; 3]]]`.
 -->
 
-因为列表的元素可以是任意表达式，所以列表可以按
-我们喜欢的深度嵌套，例如 `[[[]]; [[1; 2; 3]]]`。
+因由于列表的元素可以是任意表达式，因此列表可以按我们喜欢的深度嵌套，
+例如 `[[[]]; [[1; 2; 3]]]`。
 
-<!--
 <!--
 **Dynamic semantics.**
--->
-
-**动态语义**
 -->
 
 **动态语义**
@@ -158,9 +154,8 @@ metavariables. Using that notation, we can rewrite the latter two rules above:
 
 在所有【求值规则|Evaluation Rule】中都写「求值为」开始变得有些冗长。
 所以我们为它引入一种更短的记法。我们会写 `e ==> v`，表示 `e` 求值为 `v`。
-注意，`==>` 不是 OCaml 语法的一部分。相反，它是我们在描述语言时
-使用的一种记法，有点像【元变量|Metavariable】。使用这种记法，我们可以把
-上面的后两条规则改写为：
+注意，`==>` 不是 OCaml 语法的一部分，而是我们在描述语言时使用的一种记法，
+有点像【元变量|Metavariable】。使用这种记法，我们可以把上面的后两条规则改写为：
 
  * 若 `e1 ==> v1`，且 `e2 ==> v2`，则 `e1 :: e2 ==> v1 :: v2`。
  * 若对于 `1..n` 中的所有 `i`，`ei ==> vi`，则 `[e1; ...; en] ==> [v1; ...; vn]`。
@@ -188,7 +183,7 @@ that operate on types, instead of functions that operate on values.
 不是类型：无法构造一个类型仅仅是 `list` 的 OCaml 【值|Value】。相反，
 `list` 是一个【类型构造子|Type Constructor】：给定一个类型，它会产生
 一个新类型。例如，给定 `int`，它会产生类型 `int list`。你可以把类型构造子
-看作类似于函数的东西，只不过它们操作类型，而非操作值。
+看作类似于函数的东西，只不过它们操作类型，而非值。
 
 <!--
 The type-checking rules:
@@ -201,8 +196,9 @@ The type-checking rules:
 【类型检查规则|Type-Checking Rule】：
 
 * `[] : 'a list`
-* 若 `e1 : t` 且 `e2 : t list`，则 `e1 :: e2 : t list`。如果冒号及其
-  【优先级|Precedence】让人困惑，后者的意思是 `(e1 :: e2) : t list`。
+* 若 `e1 : t` 且 `e2 : t list`，则 `e1 :: e2 : t list`。
+  如果冒号及其【优先级|Precedence】让你有些困惑，那么后者的意思其实是
+  `(e1 :: e2) : t list`。
 
 <!--
 In the rule for `[]`, recall that `'a` is a type variable: it stands for an
@@ -213,9 +209,9 @@ that particular list, `'a` must be `int`. But if in another place we cons a
 particular list, `'a` must be `bool`.
 -->
 
-在 `[]` 的规则中，回忆一下，`'a` 是一个【类型变量|Type Variable】：
-它代表一个【未知类型|Unknown Type】。所以空列表是一个元素具有未知类型的
-列表。如果我们把一个 `int` cons 到它上面，比如 `2 :: []`，那么
+回忆一下，在 `[]` 的规则中，`'a` 是一个【类型变量|Type Variable】：
+它代表一个【未知类型|Unknown Type】。所以空列表是一个元素具有未知类型的列表。
+如果我们把一个 `int` cons 到它上面，比如 `2 :: []`，那么
 编译器会【推断|Infer】出，对于这个特定列表，`'a` 必须是 `int`。
 但如果在另一个地方，我们把一个 `bool` cons 到它上面，比如
 `true :: []`，那么编译器会推断出，对于那个特定列表，`'a` 必须是 `bool`。
@@ -235,7 +231,7 @@ covered in a [later section](records_tuples) of this book.
 -->
 
 上面链接的视频还使用了【记录体|Record】和【元组|Tuple】作为例子。
-本书的[后续小节](records_tuples)会介绍它们。
+本书的[后续章节](records_tuples)会介绍它们。
 ```
 
 {{ video_embed | replace("%%VID%%", "sO9wxUxajS4")}}
@@ -248,8 +244,8 @@ element onto some other list). We do that with a language feature called
 *pattern matching*.
 -->
 
-构造列表实际上只有两种方式：nil 和 cons。因此，如果我们想把一个列表拆成
-它的组件，【空|Empty】列表时该怎么做，【非空|Non-Empty】列表时该怎么做
+构造列表实际上只有两种方式：nil 和 cons。因此，如果我们想把一个列表拆成它的组件，
+那么【空|Empty】列表时该怎么做，【非空|Non-Empty】列表时该怎么做
 （也就是把一个元素 cons 到某个其他列表上），这些情况都必须说明。
 我们用一种称为【模式匹配|Pattern Matching】的语言特性来做到这一点。
 
@@ -278,9 +274,9 @@ could use other names if we wanted. Another common idiom is:
 这个函数表示：接受输入 `lst`，查看它是否具有与空列表相同的【形状|Shape】。
 如果是，则返回 0。否则，如果它具有与列表 `h :: t`
 相同的形状，那么让 `h` 作为 `lst` 的第一个元素，让 `t` 作为 `lst`
-的其余元素，并返回 `h + sum t`。这里选择这些【变量名|Variable Name】是为了
-暗示「【头部|Head】」和「【尾部|Tail】」，这是一种常见【习语|Idiom】，
-但如果愿意，我们也可以使用其他名称。另一种常见习语是：
+的其余元素，并返回 `h + sum t`。这里选择这些是为了暗示「【头部|Head】」
+和「【尾部|Tail】」，这是一种常见的【习语|Idiom】，
+但如果我们愿意，也可以使用其他名称。另一种常见习语是：
 
 ```{code-cell} ocaml
 let rec sum xs =
@@ -302,8 +298,8 @@ Syntactically it isn't necessary to use so many lines to define `sum`. We could
 do it all on one line:
 -->
 
-从【语法|Syntax】上说，定义 `sum` 并不需要使用这么多行。我们可以把它全部
-写在一行上：
+从【语法|Syntax】上说，定义 `sum` 并不需要使用这么多行。
+我们可以把它全部写在一行上：
 
 ```{code-cell} ocaml
 let rec sum xs = match xs with | [] -> 0 | x :: xs' -> x + sum xs'
@@ -315,7 +311,7 @@ lines we use, we could also write:
 -->
 
 或者，注意无论我们使用多少行，`with` 后的第一个 `|`
-都是【可选|Optional】的，所以我们也可以写成：
+都是【可选的|Optional】，所以我们也可以写成：
 
 ```{code-cell} ocaml
 let rec sum xs = match xs with [] -> 0 | x :: xs' -> x + sum xs'
@@ -328,9 +324,9 @@ though, are moving toward the single-line format whenever the code is short
 enough to fit on just one line.
 -->
 
-【多行格式|Multi-Line Format】是本书通常会使用的格式，因为它有助于人眼
-更好地理解语法。不过，当代码短到足以放在一行中时，OCaml
-【代码格式化工具|Code Formatting Tool】会将它转换为【单行格式|Single-Line Format】。
+【多行格式|Multi-Line Format】是本书通常会使用的格式，
+因为它有助于人眼更好地理解语法。不过，当代码短到足以放在一行中时，OCaml
+【代码格式化工具|Code Formatting Tool】会将它转换为单行格式|Single-Line Format】。
 
 <!--
 Here's another example of using pattern matching to compute the length of a
@@ -437,12 +433,12 @@ relationship in more detail later in the book.
 -->
 
 注意，上面的所有【递归函数|Recursive Function】都类似于对
-【自然数|Natural Number】 做 【归纳法证明|Proof By Induction】：
+【自然数|Natural Number】 做 【归纳证明|Proof By Induction】：
 每个自然数要么是 0，要么比某个其他自然数 $n$ 大 1，
-因此归纳法证明有一个针对 0 的【基本情况|Base Case】，
+因此归纳证明有一个针对 0 的【基本情况|Base Case】，
 以及一个针对 $n + 1$ 的【归纳情况|Inductive Case】。
 类似地，我们的所有函数都有一个针对空列表的基本情况，
-以及一个针对比另一个列表多一个元素的列表的【递归情况|Recursive Case】。
+以及一个针对「比另一个列表多一个元素的列表」的【递归情况|Recursive Case】。
 这种相似性并非偶然。【归纳|Induction】和【递归|Recursion】之间有着深刻的关系；
 本书后面会更详细地探讨这种关系。
 
@@ -456,12 +452,12 @@ match against both the empty list and the non-empty list (at least), which will
 prevent exceptions from being raised, thus making your program more robust.
 -->
 
-顺便说一下，有两个【库函数|Library Function】 `List.hd` 和 `List.tl`，
+顺带一提，有两个【库函数|Library Function】 `List.hd` 和 `List.tl`，
 它们返回列表的头部和尾部。把它们直接应用于列表，并不是好的、
 符合习语的 OCaml 写法。问题在于，当它们被应用于空列表时，
 会【引发|Raise】一个【异常|Exception】，而你必须记得【处理|Handle】那个异常。
-相反，你应该使用模式匹配：这样你就会被迫同时匹配空列表和非空列表（至少如此），
-这将防止异常被引发，从而让你的程序更加【健壮|Robust】。
+相反，你应该使用模式匹配：这样你就会被迫同时匹配空列表和（至少匹配）非空列表，
+这将防止引发异常，从而让你的程序更加【健壮|Robust】。
 
 <!--
 ## (Not) Mutating Lists
@@ -479,7 +475,7 @@ one. We could do that:
 
 列表是【不可变|Immutable】的。没有办法把列表中的一个元素从一个值改成另一个值。
 相反，OCaml 程序员会从旧列表创建新列表。例如，假设我们想编写一个函数，
-它返回与输入列表相同的列表，但第一个元素（如果存在）增加 1。我们可以这样做：
+它返回的列表与输入列表相同，但第一个元素（如果存在）增加 1。我们可以这样做：
 
 ```ocaml
 let inc_first lst =
@@ -520,7 +516,7 @@ perform an optimization.
 -->
 
 事实上，编译器采用的是后一种方式，所以没有必要担心。编译器实现共享之所以相当安全，
-原因正是列表元素不可变。如果它们反而是【可变|Mutable】的，
+正是因为列表元素不可变。如果它们反而是【可变|Mutable】的，
 那么我们就会开始担心我的列表是否与你的列表共享，以及我做出的改变是否会在你的列表中可见。
 因此，【不可变性|Immutability】让代码更容易【推理|Reason】，
 也能让编译器安全地执行优化。
@@ -536,7 +532,7 @@ We saw above how to access lists using pattern matching. Let's look more
 carefully at this feature.
 -->
 
-上面我们看到了如何使用模式匹配来访问列表。下面更仔细地看看这个特性。
+上面我们看到了如何使用模式匹配来访问列表。下面我们来更仔细地看看这个特性。
 
 **语法**
 
@@ -589,7 +585,7 @@ the possibilities for what a pattern may be.
 -->
 
 随着我们学习 OCaml 中更多可用的数据结构，
-我们会扩展模式可能具有的形式。
+我们也会扩展模式可能具有的形式。
 
 **动态语义**
 
@@ -607,7 +603,7 @@ example, consider the following code:
 模式匹配涉及两个相互关联的任务：确定一个模式是否【匹配|Match】一个值，
 以及确定值的哪些部分应该与模式中的哪些变量名相关联。直观上，
 前一个任务是确定模式和值是否具有相同形状。
-后一个任务是确定模式引入的【变量绑定|Variable Binding】。例如，考虑下面的代码：
+后一个任务是确定模式引入的【变量绑定|Variable Binding】。例如，考虑以下代码：
 
 ```{code-cell} ocaml
 match 1 :: [] with
@@ -680,7 +676,7 @@ the bindings that match produces:
 
 * 如果对于 `1..n` 中的所有 `i`，`pi` 匹配 `vi` 并产生绑定集合 $b_i$，
   那么 `[p1; ...; pn]` 匹配 `[v1; ...; vn]`，并产生绑定集合 $\bigcup_i b_i$。
-  注意，这个模式指定了列表必须具有的【精确长度|Exact Length】。
+  注意，这个模式指定了列表必须具有的【确切长度|Exact Length】。
 
 <!--
 Now we can say how to evaluate `match e with p1 -> e1 | ... | pn -> en`:
@@ -814,7 +810,7 @@ list expressions.
 -->
 
 这条规则依赖于能够【判断|Judge】一个模式是否具有某个【特定类型|Particular Type】。
-和往常一样，【类型推断|Type Inference】在这里发挥作用。
+和往常一样，【类型推断|Type Inference】在这里发挥了作用。
 OCaml 编译器会推断任何【模式变量|Pattern Variable】的类型，
 以及通配符模式所有出现位置的类型。至于列表模式，
 它们具有与【列表表达式|List Expression】相同的类型检查规则。
@@ -856,7 +852,7 @@ programmer to defend against the possibility of `Match_failure` exceptions at
 runtime.
 -->
 
-通过向程序员展示该警告，编译器帮助程序员防范在运行时引发 `Match_failure` 异常的可能性。
+通过向程序员展示该警告，编译器能够帮助程序员防范在运行时引发 `Match_failure` 异常的可能性。
 
 ```{note}
 <!--
@@ -878,9 +874,8 @@ guaranteed to succeed. For example, the function below will cause the compiler
 to emit a warning:
 -->
 
-其次，【未使用的分支|Unused Branches】：编译器会检查是否有分支
-永远不会被匹配到，因为前面的某个分支保证会成功。例如，下面的函数
-会导致编译器发出警告：
+其次是【未使用的分支|Unused Branches】：编译器会检查是否有分支永远不会被匹配到，
+因为前面的某个分支保证会成功。例如，下面的函数会导致编译器发出警告：
 
 ```{code-cell} ocaml
 let rec sum lst =
@@ -904,7 +899,7 @@ the programmer to detect latent bugs in their code.
 -->
 
 未使用的【匹配|Match】分支通常是程序员写出与其意图不符的代码的信号。
-因此，通过显示该警告，编译器正在帮助程序员检测代码中的潜在错误。
+因此，通过显示该警告，编译器能够帮助程序员检测代码中的潜在错误。
 
 <!--
 Here's an example of one of the most common bugs that causes an unused match
@@ -914,7 +909,7 @@ the dynamic semantics of match expressions:
 
 下面是一个最常见的导致「未使用匹配分支」警告的错误示例。
 理解它也是检验你对 【匹配表达式|Match Expression】
-的 【动态语义|Dynamic Semantics】掌握程度的好方法：
+的 【动态语义|Dynamic Semantics】 掌握程度的好方法：
 
 ```{code-cell} ocaml
 let length_is lst n =
@@ -938,7 +933,7 @@ are no such occurrences. So we're done, and the result of evaluation is just
 
 程序员的想法是，如果 `lst` 的长度等于 `n`，那么这个函数将返回 `true`，
 否则返回 `false`。但实际上这个函数**总是**返回 `true`。为什么呢？
-因为【模式变量|Pattern Variable】`n` 与函数参数 `n` 是不同的。
+因为【模式变量|Pattern Variable】 `n` 与函数参数 `n` 是不同的。
 假设 `lst` 的长度为 5。那么模式匹配就变成了：
 `match 5 with n -> true | _ -> false`。`n` 能匹配 5 吗？
 能，根据上面的规则：【变量模式|Variable Pattern】能匹配任何值，
@@ -1219,7 +1214,7 @@ For that reason, the List module documents which functions are tail recursive
 and which are not.
 -->
 
-如果你要对非常长的列表编写函数，【尾递归|Tail Recursive】对性能就变得很重要。
+如果你要为非常长的列表编写函数，【尾递归|Tail Recursive】对性能就变得很重要。
 因此，当你可以在尾递归和非尾递归函数之间做选择时，
 对于非常长的列表，使用尾递归函数可能更优，以实现空间效率。
 正因如此，List 模块会记录哪些函数是尾递归的，哪些不是。
@@ -1251,12 +1246,11 @@ Here is a useful tail-recursive function to produce a long list:
 下面是一个有用的尾递归函数，它用来产生一个长列表：
 
 ```{code-cell} ocaml
-(** [from i j l] is the list containing the integers from [i] to [j],
-    inclusive, followed by the list [l].
-    Example:  [from 1 3 [0] = [1; 2; 3; 0]] *)
+(** [from i j l] 是包含从 [i] 到 [j] 的整数的列表，后跟列表 [l]。
+    例如：[from 1 3 [0] = [1; 2; 3; 0]] *)
 let rec from i j l = if i > j then l else from i (j - 1) (j :: l)
 
-(** [i -- j] is the list containing the integers from [i] to [j], inclusive. *)
+(** [i -- j] 是包含从 [i] 到 [j] 的整数的列表，包含端点。 *)
 let ( -- ) i j = from i j []
 
 let long_list = 0 -- 1_000_000

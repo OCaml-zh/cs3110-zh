@@ -64,7 +64,7 @@
 | Append                   | 追加         |
 | Recursive Function       | 递归函数     |
 | Natural Number           | 自然数       |
-| Proof By Induction       | 归纳法证明   |
+| Proof By Induction       | 归纳证明     |
 | Base Case                | 基本情况     |
 | Inductive Case           | 归纳情况     |
 | Recursive Case           | 递归情况     |
@@ -97,7 +97,7 @@
 | Set                      | 集合         |
 | Union                    | 并集         |
 | Syntactic Restriction    | 句法限制     |
-| Exact Length             | 精确长度     |
+| Exact Length             | 确切长度     |
 | Attempt                  | 尝试         |
 | Match Expression         | 匹配表达式   |
 | Substitute               | 替换         |

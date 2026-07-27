@@ -1,7 +1,15 @@
 window.addEventListener("load", (event) => {
+  // 移除多余的空格
+  const newline = /(?<=[，。、！？：；」）】])\n(?!\n)/gu;
+  // const space = /\s*(<.+?>\p{Script=Han}.*?<\/.+?>)\s*/gu;
+  const paras = document.querySelectorAll("p");
+  for (const p of paras) {
+    p.innerHTML = p.innerHTML.replace(newline, "");
+    // p.innerHTML = p.innerHTML.replace(space, "$1");
+  }
+
   const docs = document.querySelectorAll("p");
   const term = /【([^】]+?)\|(.+?)】/gu;
-  // const bold = /【(.+?)】/gu;
 
   // 添加术语样式
   docs.forEach((el) => {
@@ -13,7 +21,6 @@ window.addEventListener("load", (event) => {
   <div class="term-en">$2</div>
 </div>`,
     );
-    // content = content.replace(bold, "<strong>$1</strong>");
     el.innerHTML = content;
   });
 
@@ -24,13 +31,4 @@ window.addEventListener("load", (event) => {
     console.log(len);
     term.parentElement.style.width = len + "em";
   }
-
-  // 移除多余的空格
-  const newline = /(?<=[，。、！？：；」）】])\n(?!\n)/gu;
-  // const space = /\s*(<.+?>\p{Script=Han}.*?<\/.+?>)\s*/gu;
-  const paras = document.querySelectorAll("p");
-  for (const p of paras) {
-    p.innerHTML = p.innerHTML.replace(newline, "");
-    // p.innerHTML = p.innerHTML.replace(space, "$1");
-  }
-});
+};);
