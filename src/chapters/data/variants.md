@@ -25,7 +25,7 @@ possibilities. At their simplest, variants are like enums from C or Java:
 -->
 
 【变体|Variant】是一种【数据类型|Data Type】，表示一个值是多种可能性中的一种。
-最简单的变体类似于 C 或 Java 中的枚举：
+最简单的变体类似于 C 或 Java 中的【枚举|Enum】：
 
 ```{code-cell} ocaml
 type day = Sun | Mon | Tue | Wed | Thu | Fri | Sat
@@ -111,7 +111,7 @@ The syntax for writing a constructor value is simply its name, e.g., `C`.
 * A constructor is already a value.  There is no computation to perform.
 -->
 
-* 构造子本身已经是值。无需执行任何计算。
+* 构造子本身已经是值，无需执行任何计算。
 
 <!--
 **Static semantics.**
@@ -188,7 +188,7 @@ new pattern form to the list of legal patterns:
 -->
 
 每次引入一种新的数据类型时，我们都需要引入与之关联的新模式。
-对于变体，这很简单。我们将以下新模式形式添加到合法模式列表中：
+对于变体，这很简单。我们将以下新模式的形式添加到合法模式列表中：
 
 <!--
 * a constructor name `C`
@@ -215,5 +215,5 @@ Variants are considerably more powerful than what we have seen here. We'll
 return to them again soon.
 -->
 
-变体比我们在这里看到的要强大得多。我们很快会再次讨论它们。
+变体比我们在这里看到的要强大得多，我们很快会再次讨论它们。
 ```

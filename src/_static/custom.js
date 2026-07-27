@@ -31,4 +31,4 @@ window.addEventListener("load", (event) => {
     console.log(len);
     term.parentElement.style.width = len + "em";
   }
-};);
+});
