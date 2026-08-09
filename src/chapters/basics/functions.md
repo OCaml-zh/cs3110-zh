@@ -818,7 +818,7 @@ let bad_first : int -> 'b -> string = first;;
 ## Labeled and Optional Arguments
 -->
 
-## 带标签参数与可选参数
+## 标签参数与可选参数
 
 <!--
 The type and name of a function usually give you a pretty good idea of what the
@@ -847,7 +847,7 @@ OCaml supports labeled arguments to functions. You can declare this kind of
 function using the following syntax:
 -->
 
-OCaml 支持函数的【带标签参数|Labeled Argument】。你可以用下面这种语法来声明这样的函数：
+OCaml 支持函数的【标签参数|Labeled Argument】。你可以用下面这种语法来声明这样的函数：
 
 ```{code-cell} ocaml
 let f ~name1:arg1 ~name2:arg2 = arg1 + arg2;;
@@ -857,7 +857,7 @@ let f ~name1:arg1 ~name2:arg2 = arg1 + arg2;;
 This function can be called by passing the labeled arguments in either order:
 -->
 
-这个函数在调用时，可以把带标签参数按任意顺序传入：
+这个函数在调用时，可以把标签参数按任意顺序传入：
 
 ```ocaml
 f ~name2:3 ~name1:4
@@ -880,14 +880,14 @@ Use of labeled arguments is largely a matter of taste. They convey extra
 information, but they can also add clutter to types.
 -->
 
-是否使用带标签参数，在很大程度上取决于个人风格。它们能传达额外信息，但也会让类型签名显得更臃肿。
+是否使用标签参数，在很大程度上取决于个人风格。它们能传达额外信息，但也会让类型签名显得更臃肿。
 
 <!--
 The syntax to write both a labeled argument and an explicit type annotation for
 it is:
 -->
 
-如果你想同时写出带标签参数和它的显式类型标注，语法是这样的：
+如果你想同时写出标签参数和它的显式类型标注，语法是这样的：
 
 ```ocaml
 let f ~name1:(arg1 : int) ~name2:(arg2 : int) = arg1 + arg2

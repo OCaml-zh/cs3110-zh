@@ -190,7 +190,7 @@
 | Lambda Calculus          | Lambda 演算  |
 | Behavior                 | 行为         |
 | Instantiation            | 实例化       |
-| Labeled Argument         | 带标签参数   |
+| Labeled Argument         | 标签参数     |
 | Optional Argument        | 可选参数     |
 | Partial Application      | 部分应用     |
 | Left Associative         | 左结合       |
@@ -204,3 +204,47 @@
 | Tail Recursion           | 尾递归       |
 | Integer Overflow         | 整数溢出     |
 | Big Integer              | 大整数       |
+| Higher-Order Function    | 高阶函数     |
+| Functional Programming   | 函数式编程   |
+| Closure                  | 闭包         |
+| Abstraction Principle    | 抽象原则     |
+| Characteristic Function  | 特征函数     |
+| Higher-Order Logic       | 高阶逻辑     |
+| First-Order Function     | 一阶函数     |
+| Filter                   | 过滤         |
+| Fold                     | 折叠         |
+| Side Effects             | 副作用       |
+| Evaluation Order         | 求值顺序     |
+| Predicate                | 谓词         |
+| Fold Right               | 右折叠       |
+| Fold Left                | 左折叠       |
+| Associative              | 结合律       |
+| Commutative              | 交换律       |
+| Ternary                  | 三元         |
+| Binary                   | 二元         |
+| Catamorphism             | 态射         |
+| Generalized Fold         | 广义折叠     |
+| Pruning                  | 剪枝         |
+| Data Collection          | 数据集合     |
+| Pipelining               | 管道化       |
+| Tradeoff                 | 权衡         |
+| Currying                 | 柯里化       |
+| Uncurried                | 反柯里化     |
+| Compose                  | 组合         |
+| Factor                   | 提取         |
+| Functional               | 函数式       |
+| Pipeline                 | 管道         |
+| Matrix                   | 矩阵         |
+| Row-Major                | 行优先       |
+| Row Vector               | 行向量       |
+| Transpose                | 转置         |
+| Dot Product              | 点积         |
+| Curried                  | 柯里化       |
+| Spicier                  | 更辣         |
+| Environment              | 环境         |
+| Abstracting              | 抽象         |
+| Factor Out               | 提取         |
+| Higher Order             | 高阶         |
+| First-Order Quantification | 一阶量化     |
+| Domain                   | 定义域       |
+| Second-Order Quantification | 二阶量化     |
