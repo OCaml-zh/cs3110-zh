@@ -175,3 +175,32 @@
 | Triple                   | 三元组       |
 | Disjoint Union           | 不相交并集   |
 | Cartesian Product        | 笛卡尔积     |
+| Method                   | 方法         |
+| Receiver                 | 接收者       |
+| Procedure                | 过程         |
+| Function Definition      | 函数定义     |
+| Precondition             | 前置条件     |
+| Postcondition            | 后置条件     |
+| Machine Arithmetic       | 机器算术     |
+| Type Annotation          | 类型标注     |
+| Identifier               | 标识符       |
+| Function Type            | 函数类型     |
+| Toplevel                 | 顶层环境     |
+| Lambda Expression        | Lambda 表达式 |
+| Lambda Calculus          | Lambda 演算  |
+| Behavior                 | 行为         |
+| Instantiation            | 实例化       |
+| Labeled Argument         | 带标签参数   |
+| Optional Argument        | 可选参数     |
+| Partial Application      | 部分应用     |
+| Left Associative         | 左结合       |
+| Infix Operator           | 中缀运算符   |
+| Prefix Operator          | 前缀运算符   |
+| Call Stack               | 调用栈       |
+| Accumulator              | 累加器       |
+| Tail-Call Optimization   | 尾调用优化   |
+| Tail Position            | 尾位置       |
+| Stack Frame              | 栈帧         |
+| Tail Recursion           | 尾递归       |
+| Integer Overflow         | 整数溢出     |
+| Big Integer              | 大整数       |
