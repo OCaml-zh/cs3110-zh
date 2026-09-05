@@ -13,7 +13,7 @@ functions, that we can store functions in data structures, that we can return
 functions as a result from other functions, and so forth.
 -->
 
-【函数|Function】在 OCaml 中与任何其他值一样都是值。这到底意味着什么？
+【函数|Function】在 OCaml 中与其他值一样都是值。这到底意味着什么？
 这意味着我们可以将函数作为参数传递给其他函数，可以将函数存储在数据结构中，
 可以从其他函数返回函数作为结果，等等。
 
@@ -26,9 +26,10 @@ OCaml is all about.
 -->
 
 【高阶函数|Higher-Order Function】要么接受其他函数作为输入，
-要么返回其他函数作为输出（或两者兼有）。高阶函数也被称为【函数式|Functional】，
-因此使用它们进行编程可以称为【函数式编程|Functional Programming】
-&mdash;&mdash;这表明了 OCaml 等语言编程的核心所在。
+要么返回其他函数作为输出（或二者兼有）。高阶函数也被称为【泛函|Functional】，
+因此使用它们进行编程可以称为【泛函编程|Functional Programming】，
+而中文则通常译作【函数式编程|Functional Programming】，
+这表明了 OCaml 等语言编程的核心所在。
 
 <!--
 Higher-order functions were one of the more recent adoptions from functional

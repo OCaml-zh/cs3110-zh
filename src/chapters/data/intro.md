@@ -11,7 +11,7 @@ familiar from other programming languages. In particular,
 -->
 
 在本章中，我们将研究 OCaml 的一些内置【数据类型|Data Type】，
-包括【列表|List】、【变体|Variant】、【记录体|Record】、【元组|Tuple】和【可选|Option】。
+包括【列表|List】、【变体|Variant】、【记录体|Record】、【元组|Tuple】和【可选|Option】类型。
 其中许多类型可能会让你感到似曾相识，尤其是：
 
 <!--
@@ -32,8 +32,8 @@ Because of that familiarity, we call these *standard* data types. We'll learn
 about *pattern matching*, which is a feature that's less likely to be familiar.
 -->
 
-由于这种熟悉感，我们称这些为【标准|Standard】数据类型。
-我们将学习【模式匹配|Pattern Matching】，这是一个可能不太熟悉的功能。
+由于比较熟悉，我们称这些类型为【标准|Standard】数据类型。
+我们还将学习【模式匹配|Pattern Matching】，这是一个你可能不太熟悉的功能。
 
 <!--
 Almost immediately after we learn about lists, we'll pause our study of standard
@@ -44,28 +44,29 @@ on lists, which is why we couldn't cover it before now.
 
 在学习列表之后，我们将暂停对标准数据类型的学习，
 转而学习使用 OUnit 进行 OCaml 【单元测试|Unit Testing】。
-OUnit 是一个类似于你在其他语言中可能使用过的单元测试框架。
-OUnit 依赖于列表，这就是为什么我们之前无法涵盖它的原因。
+OUnit 是一个单元测试框架，你可能在其他语言中使用过类似的框架。
+OUnit 依赖于列表，这也是为什么我们无法在前面涵盖它。
 
 <!--
 Later in the chapter, we study some OCaml data types that are unlikely to be as
 familiar from other languages. They include:
 -->
 
-在本章后面，我们将研究一些在其他语言中可能不太常见的 OCaml 数据类型。它们包括：
+在本章的后面，我们将研究一些其他语言中可能不太常见的 OCaml 数据类型。它们包括：
 
 <!--
 - **options**, which are loosely related to `null` in Java;
 -->
 
-- 【选项|Option】，与 Java 中的 `null` 有松散的关联；
+- 【选项|Option】，与 Java 中的 `null` 有些关联；
 
 <!--
 - **association lists**, which are an amazingly simple implementation
   of maps (aka dictionaries) based on lists and tuples;
 -->
 
-- 【关联列表|Association list】，这是一种基于列表和元组的、极其简单的【映射|Map】（又称字典）实现；
+- 【关联列表|Association list】，这是一种基于列表和元组的、
+  极其简单的【映射|Map】（又称【字典|Dictionary】）实现；
 
 <!--
 - **algebraic data types**, which are arguably the most important

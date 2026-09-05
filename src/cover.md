@@ -2,7 +2,7 @@
 # OCaml Programming: Correct + Efficient + Beautiful
 -->
 
-# OCaml 程序设计：正确 + 高效 + 优雅
+# OCaml 程序设计：正确 + 高效 + 优美
 
 <!--
 A textbook on functional programming and data structures in OCaml, with an
